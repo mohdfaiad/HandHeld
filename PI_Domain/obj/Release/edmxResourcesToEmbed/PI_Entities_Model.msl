@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AlinIQ_DataModelStoreContainer" CdmEntityContainer="AlinIQ_DataEntities">
+    <EntitySetMapping Name="BUILDINGS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.BUILDING">
+        <MappingFragment StoreEntitySet="BUILDINGS">
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="DEPT" ColumnName="DEPT" />
+          <ScalarProperty Name="BUILDING_NAME" ColumnName="BUILDING_NAME" />
+          <ScalarProperty Name="BUILDING_ID" ColumnName="BUILDING_ID" />
+          <ScalarProperty Name="BUILDING_CODE" ColumnName="BUILDING_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTMENTS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.DEPARTMENT">
+        <MappingFragment StoreEntitySet="DEPARTMENTS">
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="SHARESDB" ColumnName="SHARESDB" />
+          <ScalarProperty Name="RASCLIENTID" ColumnName="RASCLIENTID" />
+          <ScalarProperty Name="PHONE2" ColumnName="PHONE2" />
+          <ScalarProperty Name="PHONE1" ColumnName="PHONE1" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="MANAGER" ColumnName="MANAGER" />
+          <ScalarProperty Name="KNOWN_AS" ColumnName="KNOWN_AS" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="DEPTCODE" ColumnName="DEPTCODE" />
+          <ScalarProperty Name="DEPT" ColumnName="DEPT" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+          <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+          <ScalarProperty Name="ACCOUNT_NO" ColumnName="ACCOUNT_NO" />
+          <ScalarProperty Name="SHORTDESCRIPTION" ColumnName="SHORTDESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMS_COST_CENTERS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_COST_CENTERS">
+        <MappingFragment StoreEntitySet="IMS_COST_CENTERS">
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="COST_CENTER_ID" ColumnName="COST_CENTER_ID" />
+          <ScalarProperty Name="COST_CENTER_NAME" ColumnName="COST_CENTER_NAME" />
+          <ScalarProperty Name="COST_CENTER_CODE" ColumnName="COST_CENTER_CODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="DEPT" ColumnName="DEPT" />
+          <ScalarProperty Name="COST_CENTER_FULLNAME" ColumnName="COST_CENTER_FULLNAME" />
+          <ScalarProperty Name="INTRANSIT" ColumnName="INTRANSIT" />
+          <ScalarProperty Name="SHORTDESCRIPTION" ColumnName="SHORTDESCRIPTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMS_ITEMS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_ITEMS">
+        <MappingFragment StoreEntitySet="IMS_ITEMS">
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+          <ScalarProperty Name="SGTIN" ColumnName="SGTIN" />
+          <ScalarProperty Name="COSTCENTERID" ColumnName="COSTCENTERID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUSTIME" ColumnName="STATUSTIME" />
+          <ScalarProperty Name="LOCATIONCODE" ColumnName="LOCATIONCODE" />
+          <ScalarProperty Name="LOCATIONTIME" ColumnName="LOCATIONTIME" />
+          <ScalarProperty Name="ITEMLOTID" ColumnName="ITEMLOTID" />
+          <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+          <ScalarProperty Name="TAG_GTIN14" ColumnName="TAG_GTIN14" />
+          <ScalarProperty Name="TAG_SN" ColumnName="TAG_SN" />
+          <ScalarProperty Name="CONSUMPTION_UNITS" ColumnName="CONSUMPTION_UNITS" />
+          <ScalarProperty Name="SYSTEM_GENERATED_TAG" ColumnName="SYSTEM_GENERATED_TAG" />
+          <ScalarProperty Name="QCSAMPLE" ColumnName="QCSAMPLE" />
+          <ScalarProperty Name="QCCHECKOUTTIME" ColumnName="QCCHECKOUTTIME" />
+          <ScalarProperty Name="QUARANTINESTATUS" ColumnName="QUARANTINESTATUS" />
+          <ScalarProperty Name="CONSUMEREASON" ColumnName="CONSUMEREASON" />
+          <ScalarProperty Name="BARCODE_FLAG" ColumnName="BARCODE_FLAG" />
+          <ScalarProperty Name="RECEIPTTIME" ColumnName="RECEIPTTIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMS_LOTS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_LOTS">
+        <MappingFragment StoreEntitySet="IMS_LOTS">
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="LOTID" ColumnName="LOTID" />
+          <ScalarProperty Name="LOTNUMBER" ColumnName="LOTNUMBER" />
+          <ScalarProperty Name="LOTEXPIRATION" ColumnName="LOTEXPIRATION" />
+          <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMS_PHYSICAL_INVENTORY">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PHYSICAL_INVENTORY">
+        <MappingFragment StoreEntitySet="IMS_PHYSICAL_INVENTORY">
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="PHYSICALINVENTORYID" ColumnName="PHYSICALINVENTORYID" />
+          <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="USRNAM" ColumnName="USRNAM" />
+          <ScalarProperty Name="LOCATION_NAME" ColumnName="LOCATION_NAME" />
+          <ScalarProperty Name="PHYSICALINVENTORYREVIEWID" ColumnName="PHYSICALINVENTORYREVIEWID" />
+          <ScalarProperty Name="LOCATIONCODE" ColumnName="LOCATIONCODE" />
+          <ScalarProperty Name="LOCATION_SHORTNAME" ColumnName="LOCATION_SHORTNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMS_PHYSICAL_INVENTORY_REV">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PHYSICAL_INVENTORY_REV">
+        <MappingFragment StoreEntitySet="IMS_PHYSICAL_INVENTORY_REV">
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="PHYSICALINVENTORYREVIEWID" ColumnName="PHYSICALINVENTORYREVIEWID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="START_TIME" ColumnName="START_TIME" />
+          <ScalarProperty Name="END_TIME" ColumnName="END_TIME" />
+          <ScalarProperty Name="USRNAM" ColumnName="USRNAM" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="TEXT" ColumnName="TEXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMS_PHYSICAL_ITEMS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PHYSICAL_ITEMS">
+        <MappingFragment StoreEntitySet="IMS_PHYSICAL_ITEMS">
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="SGTIN" ColumnName="SGTIN" />
+          <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
+          <ScalarProperty Name="SUPPLIER_NAME" ColumnName="SUPPLIER_NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STATUS_TIME" ColumnName="STATUS_TIME" />
+          <ScalarProperty Name="LOTNUMBER" ColumnName="LOTNUMBER" />
+          <ScalarProperty Name="PHYSICALINVENTORYID" ColumnName="PHYSICALINVENTORYID" />
+          <ScalarProperty Name="LOTEXPIRATION" ColumnName="LOTEXPIRATION" />
+          <ScalarProperty Name="PHYSICALITEMID" ColumnName="PHYSICALITEMID" />
+          <ScalarProperty Name="DISPOSITION_STATUS" ColumnName="DISPOSITION_STATUS" />
+          <ScalarProperty Name="DISPOSITION_STATUS_TIME" ColumnName="DISPOSITION_STATUS_TIME" />
+          <ScalarProperty Name="DISPOSITION_USRNAM" ColumnName="DISPOSITION_USRNAM" />
+          <ScalarProperty Name="TAG_GTIN14" ColumnName="TAG_GTIN14" />
+          <ScalarProperty Name="TAG_SN" ColumnName="TAG_SN" />
+          <ScalarProperty Name="DISPOSITION_PARM" ColumnName="DISPOSITION_PARM" />
+          <ScalarProperty Name="OVERRIDDEN" ColumnName="OVERRIDDEN" />
+          <ScalarProperty Name="NEWLOCATIONCODE" ColumnName="NEWLOCATIONCODE" />
+          <ScalarProperty Name="DISCREPANCYNEWLOCATION" ColumnName="DISCREPANCYNEWLOCATION" />
+          <ScalarProperty Name="PROCESSED" ColumnName="PROCESSED" />
+          <ScalarProperty Name="DISCREPANCY" ColumnName="DISCREPANCY" />
+          <ScalarProperty Name="SCAN_ITEM_STATUS" ColumnName="SCAN_ITEM_STATUS" />
+          <ScalarProperty Name="PREVIOUS_LOCATION" ColumnName="PREVIOUS_LOCATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMS_PHYSICALITEM_DIS_LOG">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PHYSICALITEM_DIS_LOG">
+        <MappingFragment StoreEntitySet="IMS_PHYSICALITEM_DIS_LOG">
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="PHYSICALINVENTORYID" ColumnName="PHYSICALINVENTORYID" />
+          <ScalarProperty Name="SGTIN" ColumnName="SGTIN" />
+          <ScalarProperty Name="PHYSICALITEMID" ColumnName="PHYSICALITEMID" />
+          <ScalarProperty Name="PROCESSED_TIME" ColumnName="PROCESSED_TIME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMS_PRODUCTS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PRODUCTS">
+        <MappingFragment StoreEntitySet="IMS_PRODUCTS">
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+          <ScalarProperty Name="LISTNUMBER" ColumnName="LISTNUMBER" />
+          <ScalarProperty Name="GTIN" ColumnName="GTIN" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="STORAGE_CONDITION" ColumnName="STORAGE_CONDITION" />
+          <ScalarProperty Name="HAS_LOTS" ColumnName="HAS_LOTS" />
+          <ScalarProperty Name="HAS_EXPIRY_DATE" ColumnName="HAS_EXPIRY_DATE" />
+          <ScalarProperty Name="IS_RFID_TAGGED" ColumnName="IS_RFID_TAGGED" />
+          <ScalarProperty Name="IS_ORDERABLE" ColumnName="IS_ORDERABLE" />
+          <ScalarProperty Name="IS_VIRTUAL" ColumnName="IS_VIRTUAL" />
+          <ScalarProperty Name="SUPPCODE" ColumnName="SUPPCODE" />
+          <ScalarProperty Name="OLD_LISTNUMBER" ColumnName="OLD_LISTNUMBER" />
+          <ScalarProperty Name="NEW_LISTNUMBER" ColumnName="NEW_LISTNUMBER" />
+          <ScalarProperty Name="COMPANY_PREFIX" ColumnName="COMPANY_PREFIX" />
+          <ScalarProperty Name="IS_EDITABLE" ColumnName="IS_EDITABLE" />
+          <ScalarProperty Name="CUSTOMERMATERIALID" ColumnName="CUSTOMERMATERIALID" />
+          <ScalarProperty Name="CUSTOMERMATERIALGROUP" ColumnName="CUSTOMERMATERIALGROUP" />
+          <ScalarProperty Name="SHORT_NAME" ColumnName="SHORT_NAME" />
+          <ScalarProperty Name="IS_NON_CANON" ColumnName="IS_NON_CANON" />
+          <ScalarProperty Name="ERP_KEY_DATA" ColumnName="ERP_KEY_DATA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMS_PURPOSES">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PURPOSES">
+        <MappingFragment StoreEntitySet="IMS_PURPOSES">
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="USAGE_PURPOSE_CODE" ColumnName="USAGE_PURPOSE_CODE" />
+          <ScalarProperty Name="USAGE_PURPOSE_TEXT" ColumnName="USAGE_PURPOSE_TEXT" />
+          <ScalarProperty Name="SORTER" ColumnName="SORTER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOCATIONS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.LOCATION">
+        <MappingFragment StoreEntitySet="LOCATIONS">
+          <ScalarProperty Name="SUBLOCATIONINFO_ID" ColumnName="SUBLOCATIONINFO_ID" />
+          <ScalarProperty Name="SERVGRP" ColumnName="SERVGRP" />
+          <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
+          <ScalarProperty Name="PARENT_LOCATION_CODE" ColumnName="PARENT_LOCATION_CODE" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="LONGNAME" ColumnName="LONGNAME" />
+          <ScalarProperty Name="LONGCODE" ColumnName="LONGCODE" />
+          <ScalarProperty Name="LOCATIONCODE" ColumnName="LOCATIONCODE" />
+          <ScalarProperty Name="LOCATION_TYPE_ID" ColumnName="LOCATION_TYPE_ID" />
+          <ScalarProperty Name="LOCATION_NAME" ColumnName="LOCATION_NAME" />
+          <ScalarProperty Name="LOCATION1" ColumnName="LOCATION" />
+          <ScalarProperty Name="IS_STORABLE" ColumnName="IS_STORABLE" />
+          <ScalarProperty Name="IS_GXP" ColumnName="IS_GXP" />
+          <ScalarProperty Name="DISPLAY_LOCATIONCODE" ColumnName="DISPLAY_LOCATIONCODE" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="DEPT" ColumnName="DEPT" />
+          <ScalarProperty Name="CONDITION" ColumnName="CONDITION" />
+          <ScalarProperty Name="TO_BE_COUNTED" ColumnName="TO_BE_COUNTED" />
+          <ScalarProperty Name="MIN_INTERVAL_COUNT" ColumnName="MIN_INTERVAL_COUNT" />
+          <ScalarProperty Name="LAST_COUNT_DATE" ColumnName="LAST_COUNT_DATE" />
+          <ScalarProperty Name="MAX_INTERVAL_COUNT" ColumnName="MAX_INTERVAL_COUNT" />
+          <ScalarProperty Name="COUNT_INTERVAL_UNIT" ColumnName="COUNT_INTERVAL_UNIT" />
+          <ScalarProperty Name="SEALED" ColumnName="SEALED" />
+          <ScalarProperty Name="CAPACITY" ColumnName="CAPACITY" />
+          <ScalarProperty Name="HOLDING_MATERIAL" ColumnName="HOLDING_MATERIAL" />
+          <ScalarProperty Name="SORTER" ColumnName="SORTER" />
+          <ScalarProperty Name="HAS_RFID_COVERAGE" ColumnName="HAS_RFID_COVERAGE" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="INTRANSIT" ColumnName="INTRANSIT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="METADATA_LOOKUP_VALUES">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.METADATA_LOOKUP_VALUES">
+        <MappingFragment StoreEntitySet="METADATA_LOOKUP_VALUES">
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+          <ScalarProperty Name="TEXT" ColumnName="TEXT" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="LOOKUP_NAME" ColumnName="LOOKUP_NAME" />
+          <ScalarProperty Name="SORTER" ColumnName="SORTER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="METADATA_LOOKUPS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.METADATA_LOOKUPS">
+        <MappingFragment StoreEntitySet="METADATA_LOOKUPS">
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+          <ScalarProperty Name="USAGE" ColumnName="USAGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROOMS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.ROOM">
+        <MappingFragment StoreEntitySet="ROOMS">
+          <ScalarProperty Name="ROOM_NAME" ColumnName="ROOM_NAME" />
+          <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
+          <ScalarProperty Name="ROOM_CODE" ColumnName="ROOM_CODE" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="BUILDING_ID" ColumnName="BUILDING_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUPPLIERS">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.SUPPLIER">
+        <MappingFragment StoreEntitySet="SUPPLIERS">
+          <ScalarProperty Name="SUPZIP" ColumnName="SUPZIP" />
+          <ScalarProperty Name="SUPPST" ColumnName="SUPPST" />
+          <ScalarProperty Name="SUPPNAM" ColumnName="SUPPNAM" />
+          <ScalarProperty Name="SUPPCODE" ColumnName="SUPPCODE" />
+          <ScalarProperty Name="SUPPCITY" ColumnName="SUPPCITY" />
+          <ScalarProperty Name="SUPPADD_A" ColumnName="SUPPADD_A" />
+          <ScalarProperty Name="SUPPADD" ColumnName="SUPPADD" />
+          <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+          <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+          <ScalarProperty Name="JJCODE" ColumnName="JJCODE" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CURRENCYTYPE" ColumnName="CURRENCYTYPE" />
+          <ScalarProperty Name="SUPPID" ColumnName="SUPPID" />
+          <ScalarProperty Name="COUNTRYCODE" ColumnName="COUNTRYCODE" />
+          <ScalarProperty Name="IS_EDITABLE" ColumnName="IS_EDITABLE" />
+          <ScalarProperty Name="BLOCKOUTBOUND" ColumnName="BLOCKOUTBOUND" />
+          <ScalarProperty Name="QC_FAIL_RESOLUTION" ColumnName="QC_FAIL_RESOLUTION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TEST_LOG">
+      <EntityTypeMapping TypeName="AlinIQ_DataModel.TEST_LOG">
+        <MappingFragment StoreEntitySet="TEST_LOG">
+          <ScalarProperty Name="MsgValue" ColumnName="MsgValue" />
+          <ScalarProperty Name="Updated" ColumnName="Updated" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

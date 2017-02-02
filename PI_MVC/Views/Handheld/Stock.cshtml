@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PI_Models.InventoryItem>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+
+    <h2>Total Records: @ViewBag.Count</h2>
+    <div>
+
+
+        <div>
+            <table>
+                <tr>
+                  
+                    <th>ItemID</th>
+                    <th>SGTIN</th>
+                    <th>Product Name</th>
+                    <th>Intransit</th>
+                    <th>Status</th>
+                </tr>
+
+
+                @foreach (var l in Model)
+                {
+                    <tr> 
+                        <td>@l.itemID</td>                       
+                        <td>@l.sgtin</td>                       
+                        <td>@l.productname</td>
+                        <td>@l.intransit</td>
+                        <td>@l.status</td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+</html>

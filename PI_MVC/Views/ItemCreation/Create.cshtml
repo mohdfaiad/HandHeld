@@ -1,0 +1,73 @@
+﻿@model PI_Models.ItemCreation
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+
+        @{
+            int pi = 0;
+        }
+
+
+        @using (Html.BeginForm(FormMethod.Post))
+        {
+            
+            
+            <input type="submit" value="Create" />
+
+            <div class="products">
+                @{
+            pi = 0;
+                }
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>GTIN</th>
+                        <th>Name</th>
+                        <th>Qty</th>
+                        <th>Cost Center</th>
+                        <th>Location</th>
+                        <th>Lot &Aacute; Expiration Date</th>
+                    </tr>
+
+                    @foreach (var l in Model.products)
+                    {
+                        <tr>
+                            <td>
+                                @Html.HiddenFor(m => m.products[pi].ProductID)
+                                @Html.HiddenFor(m => m.products[pi].GTIN)
+                            </td>
+                            <td class="bold">@Html.DisplayFor(m => m.products[pi].GTIN)</td>
+                            <td>@Html.DisplayFor(m => m.products[pi].Name)</td>
+                            <td>@Html.TextBoxFor(m => m.products[pi].qty)</td>
+                            <td>@Html.DropDownListFor(m => m.products[pi].CostCenterID, Model.products[pi].AllocatedCostCenters, "Select to Cost Center", new { @class = "dropdown" })</td>
+                            <td>@Html.DropDownListFor(m => m.products[pi].location, Model.locationsList, "Select to Location", new { @class = "dropdown" })</td>
+                            <td>@Html.EditorFor(m => m.products[pi].lotnumber) &nbsp; @Html.EditorFor(m => m.products[pi].lotExpiry)</td>
+
+                        </tr>
+
+                        pi++;
+                    }
+                </table>
+            </div>
+
+
+
+        }
+
+
+
+    </div>
+</body>
+</html>

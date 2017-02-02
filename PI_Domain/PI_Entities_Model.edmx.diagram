@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="36bd430907de45b4a9e25b0fd17362d6" Name="Diagram1" ZoomLevel="78">
+        <EntityTypeShape EntityType="AlinIQ_DataModel.BUILDING" Width="1.5" PointX="0.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.DEPARTMENT" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_COST_CENTERS" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_ITEMS" Width="1.5" PointX="7.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_LOTS" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_PHYSICAL_INVENTORY" Width="4.625" PointX="12" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_PHYSICAL_INVENTORY_REV" Width="1.5" PointX="9.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_PHYSICAL_ITEMS" Width="1.875" PointX="14.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_PHYSICALITEM_DIS_LOG" Width="2" PointX="16.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_PRODUCTS" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_PURPOSES" Width="1.5" PointX="11.375" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.LOCATION" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.METADATA_LOOKUP_VALUES" Width="1.5" PointX="10" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.METADATA_LOOKUPS" Width="1.5" PointX="7.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.ROOM" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.SUPPLIER" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_BUILDINGS_DEPARTMENTS01" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_ROOMS_BUILDINGS01" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_COST_CENT_DEPARTMENTS01" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_ITEMS_IMS_COST_CENTER03" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_ITEMS_IMS_LOTS05" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_ITEMS_IMS_PRODUCTS06" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_ITEMS_LOCATIONS01" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_LOTS_IMS_PRODUCTS01" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PHYSICAL_IMS_PHYSICAL01" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PHYSICAL_IMS_PHYSICAL03" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PHYSICAL_IMS_PHYSREV01" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PHYSICAL_IMS_PHYSICAL04" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PRODUCTS_SUPPLIERS" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PRODUCTS_SUPPLIERS01" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_LOCATIONS_ROOMS01" ManuallyRouted="false" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_METADATA_LOO_METADATA_LOO01" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.LIMSCOUNTER" Width="1.5" PointX="12.375" PointY="11.75" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_COST_CENTER_PRODUCTS" Width="5" PointX="10.5" PointY="14.875" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_COST_CEN02" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_PRODUCTS03" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_PRODUCTS04" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_PO_LINE_ITEMS" Width="1.5" PointX="16.75" PointY="13.25" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_PO_SHIPMENTS" Width="1.5" PointX="9.75" PointY="24.125" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_PURCHASE_ORDERS" Width="1.5" PointX="7.5" PointY="22.5" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_SHIPMENT_ITEMS" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_SHIPMENT_LINE_ITEMS" Width="1.5" PointX="19" PointY="9.75" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_SHIPMENTS" Width="1.5" PointX="16.75" PointY="21.25" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PURCHASE_IMS_COST_CEN01" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IT_IMS_ITEMS08" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PRODUCTS02" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PRODUCTS03" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PURCHASE01" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_PO_LINE_04" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PO_SHIPM_IMS_PURCHASE01" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PO_SHIPM_IMS_SHIPMENT02" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_PRODUCTS05" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT06" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT02" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_SUPPLIER_CUSTOMERS" Width="1.5" PointX="3" PointY="23" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_PURCHASE_IMS_SUPPLIER02" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SUPPLIER03" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_SUPPLIER_CU_SUPPLIERS01" />
+        <EntityTypeShape EntityType="AlinIQ_DataModel.IMS_SHIPMENT_CONTAINERS" Width="1.5" PointX="19" PointY="21.5" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT03" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT05" />
+        <AssociationConnector Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT07" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,4 @@
+PI_XPlatform.Droid.MainActivity, PI_XPlatform.Droid;md58f2b6f817bc7d37b53f2e5ee7cdccd17.MainActivity
+PI_XPlatform.Droid.MainActivity, PI_XPlatform.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md58f2b6f817bc7d37b53f2e5ee7cdccd17.MainActivity
+PI_XPlatform.Droid.MainActivity;md58f2b6f817bc7d37b53f2e5ee7cdccd17.MainActivity
+pi_xplatform.droid.MainActivity;md58f2b6f817bc7d37b53f2e5ee7cdccd17.MainActivity

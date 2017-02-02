@@ -1,0 +1,14 @@
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\PI_DAL.dll.config
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\PI_DAL.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\PI_DAL.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\EntityFramework.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\PI_Domain.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\PI_Models.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\PI_Domain.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\PI_Models.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\EntityFramework.xml
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\obj\Release\PI_DAL.csprojResolveAssemblyReference.cache
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\obj\Release\PI_DAL.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_DAL\obj\Release\PI_DAL.pdb

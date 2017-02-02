@@ -1,0 +1,4 @@
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\Abbott.IMS.Mobile.Forms\obj\Debug\Abbott.IMS.Mobile.Forms.PhysicalInventory.resources
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\Abbott.IMS.Mobile.Forms\obj\Debug\Abbott.IMS.Mobile.Forms.Properties.Resources.resources
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\Abbott.IMS.Mobile.Forms\obj\Debug\Abbott.IMS.Mobile.Forms.csproj.GenerateResource.Cache
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\Abbott.IMS.Mobile.Forms\obj\Debug\Abbott.IMS.Mobile.Forms.csprojResolveAssemblyReference.cache

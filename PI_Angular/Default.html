@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        table, tr, td, th {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/Module.js"></script>
+    <script src="Scripts/Service.js"></script>
+    <script src="Scripts/Controller.js"></script>
+
+</head>
+<body data-ng-app="myApp">
+
+    <div id="tblSubs" ng-controller="APIController">
+
+        <a href="http://www.c-sharpcorner.com/uploadfile/65794e/web-api-with-angular-js/">Code here!</a>
+        <div class="form-group">
+            <label for="email">Subscribe here</label>
+        </div>
+        <div>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" [required="string" ] data-ng-model="mailid" />
+        </div>
+        <div>
+            <button type="button" class="btn btn-default" data-ng-click="saveSubs();">Submit</button>
+        </div>
+
+
+
+
+        <table>
+            <tr>
+
+                <th>Location Name</th>
+
+                <th>Code</th>
+
+                <th>Physical Inventory ID</th>
+
+            </tr>
+
+            <tbody data-ng-repeat="sub in subscriber">
+
+                <tr>
+
+                    <td>{{sub.LocationName}}</td>
+
+                    <td>{{sub.LocationCode }}</td>
+
+                    <td>{{sub.PhysicalInventoryID}}</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+
+</body>
+
+</html>

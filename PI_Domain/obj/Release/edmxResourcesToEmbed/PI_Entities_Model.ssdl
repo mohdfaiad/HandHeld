@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AlinIQ_DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BUILDINGS">
+    <Key>
+      <PropertyRef Name="BUILDING_ID" />
+    </Key>
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+    <Property Name="DEPT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="BUILDING_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="BUILDING_ID" Type="int" Nullable="false" />
+    <Property Name="BUILDING_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DEPARTMENTS">
+    <Key>
+      <PropertyRef Name="DEPT" />
+    </Key>
+    <Property Name="ZIP" Type="nvarchar" MaxLength="20" />
+    <Property Name="URL" Type="nvarchar" MaxLength="256" />
+    <Property Name="STATE" Type="nvarchar" MaxLength="50" />
+    <Property Name="SHARESDB" Type="nvarchar" MaxLength="10" />
+    <Property Name="RASCLIENTID" Type="nvarchar" MaxLength="15" />
+    <Property Name="PHONE2" Type="nvarchar" MaxLength="20" />
+    <Property Name="PHONE1" Type="nvarchar" MaxLength="20" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="128" />
+    <Property Name="MANAGER" Type="nvarchar" MaxLength="10" />
+    <Property Name="KNOWN_AS" Type="nvarchar" MaxLength="256" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="20" />
+    <Property Name="DEPTCODE" Type="nvarchar" MaxLength="2" />
+    <Property Name="DEPT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="50" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="128" />
+    <Property Name="ADDRESS2" Type="nvarchar" MaxLength="512" />
+    <Property Name="ADDRESS1" Type="nvarchar" MaxLength="512" />
+    <Property Name="ACCOUNT_NO" Type="nvarchar" MaxLength="50" />
+    <Property Name="SHORTDESCRIPTION" Type="nvarchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="IMS_COST_CENTERS">
+    <Key>
+      <PropertyRef Name="COST_CENTER_ID" />
+    </Key>
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="COST_CENTER_ID" Type="int" Nullable="false" />
+    <Property Name="COST_CENTER_NAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="COST_CENTER_CODE" Type="nvarchar" MaxLength="10" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+    <Property Name="DEPT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="COST_CENTER_FULLNAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="INTRANSIT" Type="nchar" MaxLength="1" />
+    <Property Name="SHORTDESCRIPTION" Type="nvarchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="IMS_ITEMS">
+    <Key>
+      <PropertyRef Name="ITEMID" />
+    </Key>
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ITEMID" Type="int" Nullable="false" />
+    <Property Name="SGTIN" Type="nvarchar" MaxLength="52" Nullable="false" />
+    <Property Name="COSTCENTERID" Type="int" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="STATUSTIME" Type="datetime" Nullable="false" />
+    <Property Name="LOCATIONCODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="LOCATIONTIME" Type="datetime" />
+    <Property Name="ITEMLOTID" Type="int" />
+    <Property Name="PRODUCTID" Type="int" Nullable="false" />
+    <Property Name="TAG_GTIN14" Type="nvarchar" MaxLength="14" />
+    <Property Name="TAG_SN" Type="nvarchar" MaxLength="12" />
+    <Property Name="CONSUMPTION_UNITS" Type="int" />
+    <Property Name="SYSTEM_GENERATED_TAG" Type="nchar" MaxLength="1" />
+    <Property Name="QCSAMPLE" Type="int" Nullable="false" />
+    <Property Name="QCCHECKOUTTIME" Type="datetime" />
+    <Property Name="QUARANTINESTATUS" Type="nvarchar" MaxLength="30" />
+    <Property Name="CONSUMEREASON" Type="nvarchar" MaxLength="80" />
+    <Property Name="BARCODE_FLAG" Type="nchar" MaxLength="1" />
+    <Property Name="RECEIPTTIME" Type="datetime" />
+  </EntityType>
+  <EntityType Name="IMS_LOTS">
+    <Key>
+      <PropertyRef Name="LOTID" />
+    </Key>
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="LOTID" Type="int" Nullable="false" />
+    <Property Name="LOTNUMBER" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LOTEXPIRATION" Type="datetime" />
+    <Property Name="PRODUCTID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IMS_PHYSICAL_INVENTORY">
+    <Key>
+      <PropertyRef Name="PHYSICALINVENTORYID" />
+    </Key>
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="PHYSICALINVENTORYID" Type="int" Nullable="false" />
+    <Property Name="START_DATE" Type="datetime" Nullable="false" />
+    <Property Name="END_DATE" Type="datetime" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+    <Property Name="USRNAM" Type="nvarchar" MaxLength="15" />
+    <Property Name="LOCATION_NAME" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PHYSICALINVENTORYREVIEWID" Type="int" />
+    <Property Name="LOCATIONCODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LOCATION_SHORTNAME" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="IMS_PHYSICAL_INVENTORY_REV">
+    <Key>
+      <PropertyRef Name="PHYSICALINVENTORYREVIEWID" />
+    </Key>
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="PHYSICALINVENTORYREVIEWID" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="START_TIME" Type="datetime" Nullable="false" />
+    <Property Name="END_TIME" Type="datetime" />
+    <Property Name="USRNAM" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TEXT" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="IMS_PHYSICAL_ITEMS">
+    <Key>
+      <PropertyRef Name="PHYSICALITEMID" />
+    </Key>
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="SGTIN" Type="nvarchar" MaxLength="52" Nullable="false" />
+    <Property Name="PRODUCT_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="SUPPLIER_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+    <Property Name="STATUS_TIME" Type="datetime" />
+    <Property Name="LOTNUMBER" Type="nvarchar" MaxLength="50" />
+    <Property Name="PHYSICALINVENTORYID" Type="int" Nullable="false" />
+    <Property Name="LOTEXPIRATION" Type="datetime" />
+    <Property Name="PHYSICALITEMID" Type="int" Nullable="false" />
+    <Property Name="DISPOSITION_STATUS" Type="nvarchar" MaxLength="20" />
+    <Property Name="DISPOSITION_STATUS_TIME" Type="datetime" />
+    <Property Name="DISPOSITION_USRNAM" Type="nvarchar" MaxLength="15" />
+    <Property Name="TAG_GTIN14" Type="nvarchar" MaxLength="14" />
+    <Property Name="TAG_SN" Type="nvarchar" MaxLength="12" />
+    <Property Name="DISPOSITION_PARM" Type="nvarchar" MaxLength="250" />
+    <Property Name="OVERRIDDEN" Type="nchar" MaxLength="1" />
+    <Property Name="NEWLOCATIONCODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="DISCREPANCYNEWLOCATION" Type="nvarchar" MaxLength="20" />
+    <Property Name="PROCESSED" Type="nchar" MaxLength="1" />
+    <Property Name="DISCREPANCY" Type="nchar" MaxLength="1" />
+    <Property Name="SCAN_ITEM_STATUS" Type="nvarchar" MaxLength="20" />
+    <Property Name="PREVIOUS_LOCATION" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="IMS_PHYSICALITEM_DIS_LOG">
+    <Key>
+      <PropertyRef Name="ORIGREC" />
+    </Key>
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="PHYSICALINVENTORYID" Type="int" Nullable="false" />
+    <Property Name="SGTIN" Type="nvarchar" MaxLength="52" Nullable="false" />
+    <Property Name="PHYSICALITEMID" Type="int" Nullable="false" />
+    <Property Name="PROCESSED_TIME" Type="datetime" Nullable="false" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="IMS_PRODUCTS">
+    <Key>
+      <PropertyRef Name="PRODUCTID" />
+    </Key>
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="PRODUCTID" Type="int" Nullable="false" />
+    <Property Name="LISTNUMBER" Type="nvarchar" MaxLength="48" Nullable="false" />
+    <Property Name="GTIN" Type="nvarchar" MaxLength="14" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
+    <Property Name="TYPE" Type="nvarchar" MaxLength="48" />
+    <Property Name="QUANTITY" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="UNIT" Type="nvarchar" MaxLength="20" />
+    <Property Name="PRICE" Type="numeric" Precision="20" Scale="2" />
+    <Property Name="STORAGE_CONDITION" Type="nvarchar" MaxLength="25" />
+    <Property Name="HAS_LOTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="HAS_EXPIRY_DATE" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="IS_RFID_TAGGED" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="IS_ORDERABLE" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="IS_VIRTUAL" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="SUPPCODE" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="OLD_LISTNUMBER" Type="nvarchar" MaxLength="48" />
+    <Property Name="NEW_LISTNUMBER" Type="nvarchar" MaxLength="48" />
+    <Property Name="COMPANY_PREFIX" Type="nvarchar" MaxLength="11" />
+    <Property Name="IS_EDITABLE" Type="nchar" MaxLength="1" />
+    <Property Name="CUSTOMERMATERIALID" Type="nvarchar" MaxLength="48" />
+    <Property Name="CUSTOMERMATERIALGROUP" Type="nvarchar" MaxLength="10" />
+    <Property Name="SHORT_NAME" Type="nvarchar" MaxLength="25" />
+    <Property Name="IS_NON_CANON" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ERP_KEY_DATA" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="IMS_PURPOSES">
+    <Key>
+      <PropertyRef Name="USAGE_PURPOSE_CODE" />
+    </Key>
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="USAGE_PURPOSE_CODE" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="USAGE_PURPOSE_TEXT" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SORTER" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOCATIONS">
+    <Key>
+      <PropertyRef Name="LOCATIONCODE" />
+    </Key>
+    <Property Name="SUBLOCATIONINFO_ID" Type="int" />
+    <Property Name="SERVGRP" Type="nvarchar" MaxLength="15" />
+    <Property Name="ROOM_ID" Type="int" />
+    <Property Name="PARENT_LOCATION_CODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LONGNAME" Type="nvarchar" MaxLength="1024" />
+    <Property Name="LONGCODE" Type="nvarchar" MaxLength="512" />
+    <Property Name="LOCATIONCODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LOCATION_TYPE_ID" Type="int" />
+    <Property Name="LOCATION_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="LOCATION" Type="nvarchar" MaxLength="25" />
+    <Property Name="IS_STORABLE" Type="nchar" MaxLength="1" />
+    <Property Name="IS_GXP" Type="nchar" MaxLength="1" />
+    <Property Name="DISPLAY_LOCATIONCODE" Type="nvarchar" MaxLength="20" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+    <Property Name="DEPT" Type="nvarchar" MaxLength="20" />
+    <Property Name="CONDITION" Type="nvarchar" MaxLength="25" />
+    <Property Name="TO_BE_COUNTED" Type="nchar" MaxLength="1" />
+    <Property Name="MIN_INTERVAL_COUNT" Type="int" />
+    <Property Name="LAST_COUNT_DATE" Type="datetime" />
+    <Property Name="MAX_INTERVAL_COUNT" Type="int" />
+    <Property Name="COUNT_INTERVAL_UNIT" Type="nvarchar" MaxLength="10" />
+    <Property Name="SEALED" Type="nchar" MaxLength="1" />
+    <Property Name="CAPACITY" Type="int" />
+    <Property Name="HOLDING_MATERIAL" Type="nvarchar" MaxLength="30" />
+    <Property Name="SORTER" Type="int" />
+    <Property Name="HAS_RFID_COVERAGE" Type="nchar" MaxLength="1" />
+    <Property Name="FULLNAME" Type="nvarchar" MaxLength="250" />
+    <Property Name="INTRANSIT" Type="nchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="METADATA_LOOKUP_VALUES">
+    <Key>
+      <PropertyRef Name="VALUE" />
+      <PropertyRef Name="LOOKUP_NAME" />
+    </Key>
+    <Property Name="VALUE" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="TEXT" Type="nvarchar" MaxLength="255" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LOOKUP_NAME" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="SORTER" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="METADATA_LOOKUPS">
+    <Key>
+      <PropertyRef Name="NAME" />
+    </Key>
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="DATA_SOURCE" Type="nvarchar" MaxLength="255" />
+    <Property Name="USAGE" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="ROOMS">
+    <Key>
+      <PropertyRef Name="ROOM_ID" />
+    </Key>
+    <Property Name="ROOM_NAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="ROOM_ID" Type="int" Nullable="false" />
+    <Property Name="ROOM_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+    <Property Name="BUILDING_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SUPPLIERS">
+    <Key>
+      <PropertyRef Name="SUPPCODE" />
+    </Key>
+    <Property Name="SUPZIP" Type="nvarchar" MaxLength="15" />
+    <Property Name="SUPPST" Type="nvarchar" MaxLength="2" />
+    <Property Name="SUPPNAM" Type="nvarchar" MaxLength="60" />
+    <Property Name="SUPPCODE" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="SUPPCITY" Type="nvarchar" MaxLength="50" />
+    <Property Name="SUPPADD_A" Type="nvarchar" MaxLength="55" />
+    <Property Name="SUPPADD" Type="nvarchar" MaxLength="55" />
+    <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JJCODE" Type="nvarchar" MaxLength="2" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="100" />
+    <Property Name="STATUS" Type="nvarchar" MaxLength="15" />
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
+    <Property Name="CURRENCYTYPE" Type="nchar" MaxLength="3" />
+    <Property Name="SUPPID" Type="nvarchar" MaxLength="80" />
+    <Property Name="COUNTRYCODE" Type="nchar" MaxLength="3" />
+    <Property Name="IS_EDITABLE" Type="nchar" MaxLength="1" />
+    <Property Name="BLOCKOUTBOUND" Type="nchar" MaxLength="1" />
+    <Property Name="QC_FAIL_RESOLUTION" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="TEST_LOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Msg" Type="varchar" MaxLength="50" />
+    <Property Name="Created" Type="datetime" />
+    <Property Name="Updated" Type="datetime" />
+    <Property Name="MsgValue" Type="numeric" Precision="18" Scale="2" />
+  </EntityType>
+  <Association Name="FK_BUILDINGS_DEPARTMENTS01">
+    <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="1" />
+    <End Role="BUILDINGS" Type="Self.BUILDINGS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENTS">
+        <PropertyRef Name="DEPT" />
+      </Principal>
+      <Dependent Role="BUILDINGS">
+        <PropertyRef Name="DEPT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_COST_CENT_DEPARTMENTS01">
+    <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="IMS_COST_CENTERS" Type="Self.IMS_COST_CENTERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTMENTS">
+        <PropertyRef Name="DEPT" />
+      </Principal>
+      <Dependent Role="IMS_COST_CENTERS">
+        <PropertyRef Name="DEPT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_ITEMS_IMS_COST_CENTER03">
+    <End Role="IMS_COST_CENTERS" Type="Self.IMS_COST_CENTERS" Multiplicity="0..1" />
+    <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMS_COST_CENTERS">
+        <PropertyRef Name="COST_CENTER_ID" />
+      </Principal>
+      <Dependent Role="IMS_ITEMS">
+        <PropertyRef Name="COSTCENTERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_ITEMS_IMS_LOTS05">
+    <End Role="IMS_LOTS" Type="Self.IMS_LOTS" Multiplicity="0..1" />
+    <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMS_LOTS">
+        <PropertyRef Name="LOTID" />
+      </Principal>
+      <Dependent Role="IMS_ITEMS">
+        <PropertyRef Name="ITEMLOTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_ITEMS_IMS_PRODUCTS06">
+    <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="1" />
+    <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMS_PRODUCTS">
+        <PropertyRef Name="PRODUCTID" />
+      </Principal>
+      <Dependent Role="IMS_ITEMS">
+        <PropertyRef Name="PRODUCTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_ITEMS_LOCATIONS01">
+    <End Role="LOCATIONS" Type="Self.LOCATIONS" Multiplicity="0..1" />
+    <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOCATIONS">
+        <PropertyRef Name="LOCATIONCODE" />
+      </Principal>
+      <Dependent Role="IMS_ITEMS">
+        <PropertyRef Name="LOCATIONCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_LOTS_IMS_PRODUCTS01">
+    <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="IMS_LOTS" Type="Self.IMS_LOTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMS_PRODUCTS">
+        <PropertyRef Name="PRODUCTID" />
+      </Principal>
+      <Dependent Role="IMS_LOTS">
+        <PropertyRef Name="PRODUCTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_PHYSICAL_IMS_PHYSICAL01">
+    <End Role="IMS_PHYSICAL_INVENTORY" Type="Self.IMS_PHYSICAL_INVENTORY" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="IMS_PHYSICAL_ITEMS" Type="Self.IMS_PHYSICAL_ITEMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMS_PHYSICAL_INVENTORY">
+        <PropertyRef Name="PHYSICALINVENTORYID" />
+      </Principal>
+      <Dependent Role="IMS_PHYSICAL_ITEMS">
+        <PropertyRef Name="PHYSICALINVENTORYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_PHYSICAL_IMS_PHYSICAL03">
+    <End Role="IMS_PHYSICAL_INVENTORY" Type="Self.IMS_PHYSICAL_INVENTORY" Multiplicity="1" />
+    <End Role="IMS_PHYSICALITEM_DIS_LOG" Type="Self.IMS_PHYSICALITEM_DIS_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMS_PHYSICAL_INVENTORY">
+        <PropertyRef Name="PHYSICALINVENTORYID" />
+      </Principal>
+      <Dependent Role="IMS_PHYSICALITEM_DIS_LOG">
+        <PropertyRef Name="PHYSICALINVENTORYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_PHYSICAL_IMS_PHYSICAL04">
+    <End Role="IMS_PHYSICAL_ITEMS" Type="Self.IMS_PHYSICAL_ITEMS" Multiplicity="1" />
+    <End Role="IMS_PHYSICALITEM_DIS_LOG" Type="Self.IMS_PHYSICALITEM_DIS_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMS_PHYSICAL_ITEMS">
+        <PropertyRef Name="PHYSICALITEMID" />
+      </Principal>
+      <Dependent Role="IMS_PHYSICALITEM_DIS_LOG">
+        <PropertyRef Name="PHYSICALITEMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_PHYSICAL_IMS_PHYSREV01">
+    <End Role="IMS_PHYSICAL_INVENTORY_REV" Type="Self.IMS_PHYSICAL_INVENTORY_REV" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="IMS_PHYSICAL_INVENTORY" Type="Self.IMS_PHYSICAL_INVENTORY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMS_PHYSICAL_INVENTORY_REV">
+        <PropertyRef Name="PHYSICALINVENTORYREVIEWID" />
+      </Principal>
+      <Dependent Role="IMS_PHYSICAL_INVENTORY">
+        <PropertyRef Name="PHYSICALINVENTORYREVIEWID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_PRODUCTS_SUPPLIERS">
+    <End Role="SUPPLIERS" Type="Self.SUPPLIERS" Multiplicity="1" />
+    <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUPPLIERS">
+        <PropertyRef Name="SUPPCODE" />
+      </Principal>
+      <Dependent Role="IMS_PRODUCTS">
+        <PropertyRef Name="SUPPCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IMS_PRODUCTS_SUPPLIERS01">
+    <End Role="SUPPLIERS" Type="Self.SUPPLIERS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SUPPLIERS">
+        <PropertyRef Name="SUPPCODE" />
+      </Principal>
+      <Dependent Role="IMS_PRODUCTS">
+        <PropertyRef Name="SUPPCODE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LOCATIONS_ROOMS01">
+    <End Role="ROOMS" Type="Self.ROOMS" Multiplicity="0..1" />
+    <End Role="LOCATIONS" Type="Self.LOCATIONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROOMS">
+        <PropertyRef Name="ROOM_ID" />
+      </Principal>
+      <Dependent Role="LOCATIONS">
+        <PropertyRef Name="ROOM_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_METADATA_LOO_METADATA_LOO01">
+    <End Role="METADATA_LOOKUPS" Type="Self.METADATA_LOOKUPS" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="METADATA_LOOKUP_VALUES" Type="Self.METADATA_LOOKUP_VALUES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="METADATA_LOOKUPS">
+        <PropertyRef Name="NAME" />
+      </Principal>
+      <Dependent Role="METADATA_LOOKUP_VALUES">
+        <PropertyRef Name="LOOKUP_NAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROOMS_BUILDINGS01">
+    <End Role="BUILDINGS" Type="Self.BUILDINGS" Multiplicity="1" />
+    <End Role="ROOMS" Type="Self.ROOMS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BUILDINGS">
+        <PropertyRef Name="BUILDING_ID" />
+      </Principal>
+      <Dependent Role="ROOMS">
+        <PropertyRef Name="BUILDING_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AlinIQ_DataModelStoreContainer">
+    <EntitySet Name="BUILDINGS" EntityType="Self.BUILDINGS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEPARTMENTS" EntityType="Self.DEPARTMENTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMS_COST_CENTERS" EntityType="Self.IMS_COST_CENTERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMS_ITEMS" EntityType="Self.IMS_ITEMS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMS_LOTS" EntityType="Self.IMS_LOTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMS_PHYSICAL_INVENTORY" EntityType="Self.IMS_PHYSICAL_INVENTORY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMS_PHYSICAL_INVENTORY_REV" EntityType="Self.IMS_PHYSICAL_INVENTORY_REV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMS_PHYSICAL_ITEMS" EntityType="Self.IMS_PHYSICAL_ITEMS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMS_PHYSICALITEM_DIS_LOG" EntityType="Self.IMS_PHYSICALITEM_DIS_LOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMS_PRODUCTS" EntityType="Self.IMS_PRODUCTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMS_PURPOSES" EntityType="Self.IMS_PURPOSES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOCATIONS" EntityType="Self.LOCATIONS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="METADATA_LOOKUP_VALUES" EntityType="Self.METADATA_LOOKUP_VALUES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="METADATA_LOOKUPS" EntityType="Self.METADATA_LOOKUPS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROOMS" EntityType="Self.ROOMS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TEST_LOG" EntityType="Self.TEST_LOG" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BUILDINGS_DEPARTMENTS01" Association="Self.FK_BUILDINGS_DEPARTMENTS01">
+      <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+      <End Role="BUILDINGS" EntitySet="BUILDINGS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_COST_CENT_DEPARTMENTS01" Association="Self.FK_IMS_COST_CENT_DEPARTMENTS01">
+      <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+      <End Role="IMS_COST_CENTERS" EntitySet="IMS_COST_CENTERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_ITEMS_IMS_COST_CENTER03" Association="Self.FK_IMS_ITEMS_IMS_COST_CENTER03">
+      <End Role="IMS_COST_CENTERS" EntitySet="IMS_COST_CENTERS" />
+      <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_ITEMS_IMS_LOTS05" Association="Self.FK_IMS_ITEMS_IMS_LOTS05">
+      <End Role="IMS_LOTS" EntitySet="IMS_LOTS" />
+      <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_ITEMS_IMS_PRODUCTS06" Association="Self.FK_IMS_ITEMS_IMS_PRODUCTS06">
+      <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+      <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_ITEMS_LOCATIONS01" Association="Self.FK_IMS_ITEMS_LOCATIONS01">
+      <End Role="LOCATIONS" EntitySet="LOCATIONS" />
+      <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_LOTS_IMS_PRODUCTS01" Association="Self.FK_IMS_LOTS_IMS_PRODUCTS01">
+      <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+      <End Role="IMS_LOTS" EntitySet="IMS_LOTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSICAL01" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL01">
+      <End Role="IMS_PHYSICAL_INVENTORY" EntitySet="IMS_PHYSICAL_INVENTORY" />
+      <End Role="IMS_PHYSICAL_ITEMS" EntitySet="IMS_PHYSICAL_ITEMS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSICAL03" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL03">
+      <End Role="IMS_PHYSICAL_INVENTORY" EntitySet="IMS_PHYSICAL_INVENTORY" />
+      <End Role="IMS_PHYSICALITEM_DIS_LOG" EntitySet="IMS_PHYSICALITEM_DIS_LOG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSICAL04" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL04">
+      <End Role="IMS_PHYSICAL_ITEMS" EntitySet="IMS_PHYSICAL_ITEMS" />
+      <End Role="IMS_PHYSICALITEM_DIS_LOG" EntitySet="IMS_PHYSICALITEM_DIS_LOG" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSREV01" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSREV01">
+      <End Role="IMS_PHYSICAL_INVENTORY_REV" EntitySet="IMS_PHYSICAL_INVENTORY_REV" />
+      <End Role="IMS_PHYSICAL_INVENTORY" EntitySet="IMS_PHYSICAL_INVENTORY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_PRODUCTS_SUPPLIERS" Association="Self.FK_IMS_PRODUCTS_SUPPLIERS">
+      <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
+      <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IMS_PRODUCTS_SUPPLIERS01" Association="Self.FK_IMS_PRODUCTS_SUPPLIERS01">
+      <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
+      <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LOCATIONS_ROOMS01" Association="Self.FK_LOCATIONS_ROOMS01">
+      <End Role="ROOMS" EntitySet="ROOMS" />
+      <End Role="LOCATIONS" EntitySet="LOCATIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_METADATA_LOO_METADATA_LOO01" Association="Self.FK_METADATA_LOO_METADATA_LOO01">
+      <End Role="METADATA_LOOKUPS" EntitySet="METADATA_LOOKUPS" />
+      <End Role="METADATA_LOOKUP_VALUES" EntitySet="METADATA_LOOKUP_VALUES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROOMS_BUILDINGS01" Association="Self.FK_ROOMS_BUILDINGS01">
+      <End Role="BUILDINGS" EntitySet="BUILDINGS" />
+      <End Role="ROOMS" EntitySet="ROOMS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

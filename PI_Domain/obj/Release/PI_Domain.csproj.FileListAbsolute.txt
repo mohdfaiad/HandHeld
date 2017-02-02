@@ -1,0 +1,12 @@
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\bin\Release\PI_Domain.dll.config
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\bin\Release\PI_Domain.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\bin\Release\PI_Domain.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\bin\Release\EntityFramework.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\bin\Release\Newtonsoft.Json.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\bin\Release\EntityFramework.xml
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\bin\Release\Newtonsoft.Json.xml
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\obj\Release\PI_Domain.csprojResolveAssemblyReference.cache
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\obj\Release\PI_Domain.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Domain\obj\Release\PI_Domain.pdb

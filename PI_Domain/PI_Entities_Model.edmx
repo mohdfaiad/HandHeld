@@ -1,0 +1,2822 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AlinIQ_DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BUILDINGS">
+          <Key>
+            <PropertyRef Name="BUILDING_ID" />
+          </Key>
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+          <Property Name="DEPT" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="BUILDING_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="BUILDING_ID" Type="int" Nullable="false" />
+          <Property Name="BUILDING_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DEPARTMENTS">
+          <Key>
+            <PropertyRef Name="DEPT" />
+          </Key>
+          <Property Name="ZIP" Type="nvarchar" MaxLength="20" />
+          <Property Name="URL" Type="nvarchar" MaxLength="256" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="50" />
+          <Property Name="SHARESDB" Type="nvarchar" MaxLength="10" />
+          <Property Name="RASCLIENTID" Type="nvarchar" MaxLength="15" />
+          <Property Name="PHONE2" Type="nvarchar" MaxLength="20" />
+          <Property Name="PHONE1" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="128" />
+          <Property Name="MANAGER" Type="nvarchar" MaxLength="10" />
+          <Property Name="KNOWN_AS" Type="nvarchar" MaxLength="256" />
+          <Property Name="FAX" Type="nvarchar" MaxLength="20" />
+          <Property Name="DEPTCODE" Type="nvarchar" MaxLength="2" />
+          <Property Name="DEPT" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="50" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="128" />
+          <Property Name="ADDRESS2" Type="nvarchar" MaxLength="512" />
+          <Property Name="ADDRESS1" Type="nvarchar" MaxLength="512" />
+          <Property Name="ACCOUNT_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="SHORTDESCRIPTION" Type="nvarchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="IMS_COST_CENTER_PRODUCTS">
+          <Key>
+            <PropertyRef Name="COSTCENTERID" />
+            <PropertyRef Name="PRODUCTID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="MINITEMLEVEL" Type="int" />
+          <Property Name="MAXITEMLEVEL" Type="int" />
+          <Property Name="COSTCENTERID" Type="int" Nullable="false" />
+          <Property Name="PRODUCTID" Type="int" Nullable="false" />
+          <Property Name="IS_STOCK_CONTROLLED" Type="nchar" MaxLength="1" />
+          <Property Name="MAKE_ORDER_SUGGESTIONS" Type="nchar" MaxLength="1" />
+          <Property Name="ALT_ORDERPRODUCTID" Type="int" />
+          <Property Name="CONSUMPTIONUNITS" Type="int" />
+          <Property Name="QUARANTINEMETHOD" Type="nvarchar" MaxLength="30" />
+          <Property Name="QUATANTINELOCATIONCODE" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="IMS_COST_CENTERS">
+          <Key>
+            <PropertyRef Name="COST_CENTER_ID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="COST_CENTER_ID" Type="int" Nullable="false" />
+          <Property Name="COST_CENTER_NAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="COST_CENTER_CODE" Type="nvarchar" MaxLength="10" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+          <Property Name="DEPT" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="COST_CENTER_FULLNAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="INTRANSIT" Type="nchar" MaxLength="1" />
+          <Property Name="SHORTDESCRIPTION" Type="nvarchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="IMS_ITEMS">
+          <Key>
+            <PropertyRef Name="ITEMID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ITEMID" Type="int" Nullable="false" />
+          <Property Name="SGTIN" Type="nvarchar" MaxLength="52" Nullable="false" />
+          <Property Name="COSTCENTERID" Type="int" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STATUSTIME" Type="datetime" Nullable="false" />
+          <Property Name="LOCATIONCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="LOCATIONTIME" Type="datetime" />
+          <Property Name="ITEMLOTID" Type="int" />
+          <Property Name="PRODUCTID" Type="int" Nullable="false" />
+          <Property Name="TAG_GTIN14" Type="nvarchar" MaxLength="14" />
+          <Property Name="TAG_SN" Type="nvarchar" MaxLength="12" />
+          <Property Name="CONSUMPTION_UNITS" Type="int" />
+          <Property Name="SYSTEM_GENERATED_TAG" Type="nchar" MaxLength="1" />
+          <Property Name="QCSAMPLE" Type="int" Nullable="false" />
+          <Property Name="QCCHECKOUTTIME" Type="datetime" />
+          <Property Name="QUARANTINESTATUS" Type="nvarchar" MaxLength="30" />
+          <Property Name="CONSUMEREASON" Type="nvarchar" MaxLength="80" />
+          <Property Name="BARCODE_FLAG" Type="nchar" MaxLength="1" />
+          <Property Name="RECEIPTTIME" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IMS_LOTS">
+          <Key>
+            <PropertyRef Name="LOTID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="LOTID" Type="int" Nullable="false" />
+          <Property Name="LOTNUMBER" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LOTEXPIRATION" Type="datetime" />
+          <Property Name="PRODUCTID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IMS_PHYSICAL_INVENTORY">
+          <Key>
+            <PropertyRef Name="PHYSICALINVENTORYID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="PHYSICALINVENTORYID" Type="int" Nullable="false" />
+          <Property Name="START_DATE" Type="datetime" Nullable="false" />
+          <Property Name="END_DATE" Type="datetime" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+          <Property Name="USRNAM" Type="nvarchar" MaxLength="15" />
+          <Property Name="LOCATION_NAME" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="PHYSICALINVENTORYREVIEWID" Type="int" />
+          <Property Name="LOCATIONCODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LOCATION_SHORTNAME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IMS_PHYSICAL_INVENTORY_REV">
+          <Key>
+            <PropertyRef Name="PHYSICALINVENTORYREVIEWID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="PHYSICALINVENTORYREVIEWID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="START_TIME" Type="datetime" Nullable="false" />
+          <Property Name="END_TIME" Type="datetime" />
+          <Property Name="USRNAM" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TEXT" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="IMS_PHYSICAL_ITEMS">
+          <Key>
+            <PropertyRef Name="PHYSICALITEMID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="SGTIN" Type="nvarchar" MaxLength="52" Nullable="false" />
+          <Property Name="PRODUCT_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="SUPPLIER_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+          <Property Name="STATUS_TIME" Type="datetime" />
+          <Property Name="LOTNUMBER" Type="nvarchar" MaxLength="50" />
+          <Property Name="PHYSICALINVENTORYID" Type="int" Nullable="false" />
+          <Property Name="LOTEXPIRATION" Type="datetime" />
+          <Property Name="PHYSICALITEMID" Type="int" Nullable="false" />
+          <Property Name="DISPOSITION_STATUS" Type="nvarchar" MaxLength="30" />
+          <Property Name="DISPOSITION_STATUS_TIME" Type="datetime" />
+          <Property Name="DISPOSITION_USRNAM" Type="nvarchar" MaxLength="15" />
+          <Property Name="TAG_GTIN14" Type="nvarchar" MaxLength="14" />
+          <Property Name="TAG_SN" Type="nvarchar" MaxLength="12" />
+          <Property Name="DISPOSITION_PARM" Type="nvarchar" MaxLength="250" />
+          <Property Name="OVERRIDDEN" Type="nchar" MaxLength="1" />
+          <Property Name="NEWLOCATIONCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="DISCREPANCYNEWLOCATION" Type="nvarchar" MaxLength="20" />
+          <Property Name="PROCESSED" Type="nchar" MaxLength="1" />
+          <Property Name="DISCREPANCY" Type="nchar" MaxLength="1" />
+          <Property Name="SCAN_ITEM_STATUS" Type="nvarchar" MaxLength="20" />
+          <Property Name="PREVIOUS_LOCATION" Type="nvarchar" MaxLength="20" />
+          <Property Name="OVERRIDE_CODE" Type="nchar" MaxLength="1" />
+          <Property Name="DISPOSITION_CODE" Type="nchar" MaxLength="3" />
+          <Property Name="DISCREPANCY_CODE" Type="int" />
+          <Property Name="TEST_CODE" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="IMS_PHYSICALITEM_DIS_LOG">
+          <Key>
+            <PropertyRef Name="ORIGREC" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="PHYSICALINVENTORYID" Type="int" Nullable="false" />
+          <Property Name="SGTIN" Type="nvarchar" MaxLength="52" Nullable="false" />
+          <Property Name="PHYSICALITEMID" Type="int" Nullable="false" />
+          <Property Name="PROCESSED_TIME" Type="datetime" Nullable="false" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="IMS_PO_LINE_ITEMS">
+          <Key>
+            <PropertyRef Name="ORDERLINEITEMID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ORDERLINEITEMID" Type="int" Nullable="false" />
+          <Property Name="LINE_ITEM_NUMBER" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="QUANTITY_ORDERED" Type="int" Nullable="false" />
+          <Property Name="QUANTITY_ACCEPTED" Type="int" />
+          <Property Name="QUANTITY_BACKORDERED" Type="int" />
+          <Property Name="QUANTITY_DELETED" Type="int" />
+          <Property Name="QUANTITY_SUBSTITUTED" Type="int" />
+          <Property Name="UNIT_PRICE" Type="numeric" Precision="20" Scale="2" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STATUS_TIME" Type="datetime" Nullable="false" />
+          <Property Name="PURCHASEORDERID" Type="int" Nullable="false" />
+          <Property Name="PRODUCTID" Type="int" Nullable="false" />
+          <Property Name="SUB_PRODUCTID" Type="int" />
+          <Property Name="SUB_COMMENT" Type="nvarchar" MaxLength="264" />
+          <Property Name="COMMENTS" Type="nvarchar" MaxLength="255" />
+          <Property Name="QUANTITY_PENDING" Type="int" Nullable="false" />
+          <Property Name="QUANTITY_EXPECTED" Type="int" />
+          <Property Name="QUANTITY_RECEIVED" Type="int" />
+          <Property Name="ERP_PO_LINE_NUMBER" Type="nvarchar" MaxLength="6" />
+          <Property Name="ERP_PO_NUM" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="IMS_PO_SHIPMENTS">
+          <Key>
+            <PropertyRef Name="PURCHASEORDERID" />
+            <PropertyRef Name="SHIPMENTID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="PURCHASEORDERID" Type="int" Nullable="false" />
+          <Property Name="SHIPMENTID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IMS_PRODUCTS">
+          <Key>
+            <PropertyRef Name="PRODUCTID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="PRODUCTID" Type="int" Nullable="false" />
+          <Property Name="LISTNUMBER" Type="nvarchar" MaxLength="48" Nullable="false" />
+          <Property Name="GTIN" Type="nvarchar" MaxLength="14" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="48" />
+          <Property Name="QUANTITY" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="UNIT" Type="nvarchar" MaxLength="20" />
+          <Property Name="PRICE" Type="numeric" Precision="20" Scale="2" />
+          <Property Name="STORAGE_CONDITION" Type="nvarchar" MaxLength="25" />
+          <Property Name="HAS_LOTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="HAS_EXPIRY_DATE" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="IS_RFID_TAGGED" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="IS_ORDERABLE" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="IS_VIRTUAL" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="SUPPCODE" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="OLD_LISTNUMBER" Type="nvarchar" MaxLength="48" />
+          <Property Name="NEW_LISTNUMBER" Type="nvarchar" MaxLength="48" />
+          <Property Name="COMPANY_PREFIX" Type="nvarchar" MaxLength="11" />
+          <Property Name="IS_EDITABLE" Type="nchar" MaxLength="1" />
+          <Property Name="CUSTOMERMATERIALID" Type="nvarchar" MaxLength="48" />
+          <Property Name="CUSTOMERMATERIALGROUP" Type="nvarchar" MaxLength="10" />
+          <Property Name="SHORT_NAME" Type="nvarchar" MaxLength="25" />
+          <Property Name="IS_NON_CANON" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ERP_KEY_DATA" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="IMS_PURCHASE_ORDERS">
+          <Key>
+            <PropertyRef Name="PURCHASEORDERID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="PURCHASEORDERID" Type="int" Nullable="false" />
+          <Property Name="PO_NUMBER" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="PO_CUSTOMER_REF" Type="nvarchar" MaxLength="30" />
+          <Property Name="PO_SUPPLIER_REF" Type="nvarchar" MaxLength="30" />
+          <Property Name="APPROVAL_DATE" Type="datetime" Nullable="false" />
+          <Property Name="CONFIRM_DATE" Type="datetime" />
+          <Property Name="PROCESS_DATE" Type="datetime" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="STATUS_TIME" Type="datetime" Nullable="false" />
+          <Property Name="COST_CENTER_ID" Type="int" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="int" Nullable="false" />
+          <Property Name="REQ_SHIP_DATE" Type="datetime" />
+          <Property Name="TXSTATUS" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TXSTATUS_TIME" Type="datetime" Nullable="false" />
+          <Property Name="ACKSTATUS" Type="nvarchar" MaxLength="20" />
+          <Property Name="ACKSTATUS_TIME" Type="datetime" />
+          <Property Name="ERP_PO_NUMBER" Type="nvarchar" MaxLength="40" />
+          <Property Name="ERP_KEY_DATA" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="IMS_PURPOSES">
+          <Key>
+            <PropertyRef Name="USAGE_PURPOSE_CODE" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="USAGE_PURPOSE_CODE" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="USAGE_PURPOSE_TEXT" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SORTER" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IMS_SHIPMENT_CONTAINERS">
+          <Key>
+            <PropertyRef Name="CONTAINERID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="CONTAINERID" Type="int" Nullable="false" />
+          <Property Name="CONTAINERTYPE" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="SHIPMENTID" Type="int" Nullable="false" />
+          <Property Name="PARENTCONTAINERID" Type="int" />
+          <Property Name="TAGREADSTATUS" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="TAGREADTIME" Type="datetime" />
+          <Property Name="SSCC" Type="nvarchar" MaxLength="52" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IMS_SHIPMENT_ITEMS">
+          <Key>
+            <PropertyRef Name="SHIPMENTITEMID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="SHIPMENTITEMID" Type="int" Nullable="false" />
+          <Property Name="CONTAINERID" Type="int" />
+          <Property Name="SHIPMENTLINEITEMID" Type="int" Nullable="false" />
+          <Property Name="TAGREADSTATUS" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="TAGREADTIME" Type="datetime" />
+          <Property Name="ITEMID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IMS_SHIPMENT_LINE_ITEMS">
+          <Key>
+            <PropertyRef Name="SHIPMENTLINEITEMID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="SHIPMENTLINEITEMID" Type="int" Nullable="false" />
+          <Property Name="SHIPMENTID" Type="int" Nullable="false" />
+          <Property Name="ORDERLINEITEMID" Type="int" />
+          <Property Name="CONTAINERID" Type="int" />
+          <Property Name="QUANTITYSHIPPED" Type="int" Nullable="false" />
+          <Property Name="LOTNUMBER" Type="nvarchar" MaxLength="50" />
+          <Property Name="LOTEXPIRATION" Type="datetime" />
+          <Property Name="PRODUCTID" Type="int" Nullable="false" />
+          <Property Name="PO_NUMBER" Type="nvarchar" MaxLength="40" />
+          <Property Name="LINE_ITEM_NUMBER" Type="nvarchar" MaxLength="6" />
+          <Property Name="PO_CUSTOMER_REF" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="IMS_SHIPMENTS">
+          <Key>
+            <PropertyRef Name="SHIPMENTID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="SHIPMENTID" Type="int" Nullable="false" />
+          <Property Name="ASNNUMBER" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ASNCREATIONDATE" Type="datetime" />
+          <Property Name="RECEIVESTATUS" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="SHIPMENTDATE" Type="datetime" />
+          <Property Name="STATUSTIME" Type="datetime" />
+          <Property Name="CUSTOMERID" Type="int" Nullable="false" />
+          <Property Name="HAS_SYSTEM_GENERATED_TAGS" Type="nchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IMS_SUPPLIER_CUSTOMERS">
+          <Key>
+            <PropertyRef Name="CUSTOMERID" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="int" Nullable="false" />
+          <Property Name="SHIP_TO_CUSTOMER_ID" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="60" />
+          <Property Name="SUPPCODE" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="ADDRESS" Type="nvarchar" MaxLength="55" />
+          <Property Name="CITY" Type="nvarchar" MaxLength="35" />
+          <Property Name="STATE" Type="nvarchar" MaxLength="2" />
+          <Property Name="POSTALCODE" Type="nvarchar" MaxLength="15" />
+          <Property Name="COUNTRYCODE" Type="nvarchar" MaxLength="3" />
+          <Property Name="ADDRESS_2" Type="nvarchar" MaxLength="55" />
+        </EntityType>
+        <EntityType Name="LIMSCOUNTERS">
+          <Key>
+            <PropertyRef Name="ORIGREC" />
+          </Key>
+          <Property Name="TABLNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PREFIX" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LIMSCOUNTER" Type="int" Nullable="false" />
+          <Property Name="FLDNAME" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOCATIONS">
+          <Key>
+            <PropertyRef Name="LOCATIONCODE" />
+          </Key>
+          <Property Name="SUBLOCATIONINFO_ID" Type="int" />
+          <Property Name="SERVGRP" Type="nvarchar" MaxLength="15" />
+          <Property Name="ROOM_ID" Type="int" />
+          <Property Name="PARENT_LOCATION_CODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LONGNAME" Type="nvarchar" MaxLength="1024" />
+          <Property Name="LONGCODE" Type="nvarchar" MaxLength="512" />
+          <Property Name="LOCATIONCODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LOCATION_TYPE_ID" Type="int" />
+          <Property Name="LOCATION_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="LOCATION" Type="nvarchar" MaxLength="25" />
+          <Property Name="IS_STORABLE" Type="nchar" MaxLength="1" />
+          <Property Name="IS_GXP" Type="nchar" MaxLength="1" />
+          <Property Name="DISPLAY_LOCATIONCODE" Type="nvarchar" MaxLength="20" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="255" />
+          <Property Name="DEPT" Type="nvarchar" MaxLength="20" />
+          <Property Name="CONDITION" Type="nvarchar" MaxLength="25" />
+          <Property Name="TO_BE_COUNTED" Type="nchar" MaxLength="1" />
+          <Property Name="MIN_INTERVAL_COUNT" Type="int" />
+          <Property Name="LAST_COUNT_DATE" Type="datetime" />
+          <Property Name="MAX_INTERVAL_COUNT" Type="int" />
+          <Property Name="COUNT_INTERVAL_UNIT" Type="nvarchar" MaxLength="10" />
+          <Property Name="SEALED" Type="nchar" MaxLength="1" />
+          <Property Name="CAPACITY" Type="int" />
+          <Property Name="HOLDING_MATERIAL" Type="nvarchar" MaxLength="30" />
+          <Property Name="SORTER" Type="int" />
+          <Property Name="HAS_RFID_COVERAGE" Type="nchar" MaxLength="1" />
+          <Property Name="FULLNAME" Type="nvarchar" MaxLength="250" />
+          <Property Name="INTRANSIT" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="METADATA_LOOKUP_VALUES">
+          <Key>
+            <PropertyRef Name="VALUE" />
+            <PropertyRef Name="LOOKUP_NAME" />
+          </Key>
+          <Property Name="VALUE" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="TEXT" Type="nvarchar" MaxLength="255" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LOOKUP_NAME" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SORTER" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="METADATA_LOOKUPS">
+          <Key>
+            <PropertyRef Name="NAME" />
+          </Key>
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="DATA_SOURCE" Type="nvarchar" MaxLength="255" />
+          <Property Name="USAGE" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="ROOMS">
+          <Key>
+            <PropertyRef Name="ROOM_ID" />
+          </Key>
+          <Property Name="ROOM_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROOM_ID" Type="int" Nullable="false" />
+          <Property Name="ROOM_CODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="100" />
+          <Property Name="BUILDING_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUPPLIERS">
+          <Key>
+            <PropertyRef Name="SUPPCODE" />
+          </Key>
+          <Property Name="SUPZIP" Type="nvarchar" MaxLength="15" />
+          <Property Name="SUPPST" Type="nvarchar" MaxLength="2" />
+          <Property Name="SUPPNAM" Type="nvarchar" MaxLength="60" />
+          <Property Name="SUPPCODE" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="SUPPCITY" Type="nvarchar" MaxLength="50" />
+          <Property Name="SUPPADD_A" Type="nvarchar" MaxLength="55" />
+          <Property Name="SUPPADD" Type="nvarchar" MaxLength="55" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JJCODE" Type="nvarchar" MaxLength="2" />
+          <Property Name="COUNTRY" Type="nvarchar" MaxLength="100" />
+          <Property Name="STATUS" Type="nvarchar" MaxLength="15" />
+          <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="250" />
+          <Property Name="CURRENCYTYPE" Type="nchar" MaxLength="3" />
+          <Property Name="SUPPID" Type="nvarchar" MaxLength="80" />
+          <Property Name="COUNTRYCODE" Type="nchar" MaxLength="3" />
+          <Property Name="IS_EDITABLE" Type="nchar" MaxLength="1" />
+          <Property Name="BLOCKOUTBOUND" Type="nchar" MaxLength="1" />
+          <Property Name="QC_FAIL_RESOLUTION" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="X_TEST_RL">
+          <Key>
+            <PropertyRef Name="ORIGREC" />
+          </Key>
+          <Property Name="ORIGREC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ORIGSTS" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="LARGE" Type="ntext" />
+        </EntityType>
+        <Association Name="FK_BUILDINGS_DEPARTMENTS01">
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="1" />
+          <End Role="BUILDINGS" Type="Self.BUILDINGS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENTS">
+              <PropertyRef Name="DEPT" />
+            </Principal>
+            <Dependent Role="BUILDINGS">
+              <PropertyRef Name="DEPT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_COST_CEN_IMS_COST_CEN02">
+          <End Role="IMS_COST_CENTERS" Type="Self.IMS_COST_CENTERS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_COST_CENTER_PRODUCTS" Type="Self.IMS_COST_CENTER_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_COST_CENTERS">
+              <PropertyRef Name="COST_CENTER_ID" />
+            </Principal>
+            <Dependent Role="IMS_COST_CENTER_PRODUCTS">
+              <PropertyRef Name="COSTCENTERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_COST_CEN_IMS_PRODUCTS03">
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_COST_CENTER_PRODUCTS" Type="Self.IMS_COST_CENTER_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_COST_CENTER_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_COST_CEN_IMS_PRODUCTS04">
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="0..1" />
+          <End Role="IMS_COST_CENTER_PRODUCTS" Type="Self.IMS_COST_CENTER_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_COST_CENTER_PRODUCTS">
+              <PropertyRef Name="ALT_ORDERPRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_COST_CENT_DEPARTMENTS01">
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_COST_CENTERS" Type="Self.IMS_COST_CENTERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENTS">
+              <PropertyRef Name="DEPT" />
+            </Principal>
+            <Dependent Role="IMS_COST_CENTERS">
+              <PropertyRef Name="DEPT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_ITEMS_IMS_COST_CENTER03">
+          <End Role="IMS_COST_CENTERS" Type="Self.IMS_COST_CENTERS" Multiplicity="0..1" />
+          <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_COST_CENTERS">
+              <PropertyRef Name="COST_CENTER_ID" />
+            </Principal>
+            <Dependent Role="IMS_ITEMS">
+              <PropertyRef Name="COSTCENTERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_ITEMS_IMS_LOTS05">
+          <End Role="IMS_LOTS" Type="Self.IMS_LOTS" Multiplicity="0..1" />
+          <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_LOTS">
+              <PropertyRef Name="LOTID" />
+            </Principal>
+            <Dependent Role="IMS_ITEMS">
+              <PropertyRef Name="ITEMLOTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_ITEMS_IMS_PRODUCTS06">
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="1" />
+          <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_ITEMS">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_ITEMS_LOCATIONS01">
+          <End Role="LOCATIONS" Type="Self.LOCATIONS" Multiplicity="0..1" />
+          <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOCATIONS">
+              <PropertyRef Name="LOCATIONCODE" />
+            </Principal>
+            <Dependent Role="IMS_ITEMS">
+              <PropertyRef Name="LOCATIONCODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_LOTS_IMS_PRODUCTS01">
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_LOTS" Type="Self.IMS_LOTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_LOTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PHYSICAL_IMS_PHYSICAL01">
+          <End Role="IMS_PHYSICAL_INVENTORY" Type="Self.IMS_PHYSICAL_INVENTORY" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_PHYSICAL_ITEMS" Type="Self.IMS_PHYSICAL_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PHYSICAL_INVENTORY">
+              <PropertyRef Name="PHYSICALINVENTORYID" />
+            </Principal>
+            <Dependent Role="IMS_PHYSICAL_ITEMS">
+              <PropertyRef Name="PHYSICALINVENTORYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PHYSICAL_IMS_PHYSICAL03">
+          <End Role="IMS_PHYSICAL_INVENTORY" Type="Self.IMS_PHYSICAL_INVENTORY" Multiplicity="1" />
+          <End Role="IMS_PHYSICALITEM_DIS_LOG" Type="Self.IMS_PHYSICALITEM_DIS_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PHYSICAL_INVENTORY">
+              <PropertyRef Name="PHYSICALINVENTORYID" />
+            </Principal>
+            <Dependent Role="IMS_PHYSICALITEM_DIS_LOG">
+              <PropertyRef Name="PHYSICALINVENTORYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PHYSICAL_IMS_PHYSICAL04">
+          <End Role="IMS_PHYSICAL_ITEMS" Type="Self.IMS_PHYSICAL_ITEMS" Multiplicity="1" />
+          <End Role="IMS_PHYSICALITEM_DIS_LOG" Type="Self.IMS_PHYSICALITEM_DIS_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PHYSICAL_ITEMS">
+              <PropertyRef Name="PHYSICALITEMID" />
+            </Principal>
+            <Dependent Role="IMS_PHYSICALITEM_DIS_LOG">
+              <PropertyRef Name="PHYSICALITEMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PHYSICAL_IMS_PHYSREV01">
+          <End Role="IMS_PHYSICAL_INVENTORY_REV" Type="Self.IMS_PHYSICAL_INVENTORY_REV" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_PHYSICAL_INVENTORY" Type="Self.IMS_PHYSICAL_INVENTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PHYSICAL_INVENTORY_REV">
+              <PropertyRef Name="PHYSICALINVENTORYREVIEWID" />
+            </Principal>
+            <Dependent Role="IMS_PHYSICAL_INVENTORY">
+              <PropertyRef Name="PHYSICALINVENTORYREVIEWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PO_LINE__IMS_PRODUCTS02">
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="1" />
+          <End Role="IMS_PO_LINE_ITEMS" Type="Self.IMS_PO_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_PO_LINE_ITEMS">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PO_LINE__IMS_PRODUCTS03">
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="0..1" />
+          <End Role="IMS_PO_LINE_ITEMS" Type="Self.IMS_PO_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_PO_LINE_ITEMS">
+              <PropertyRef Name="SUB_PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PO_LINE__IMS_PURCHASE01">
+          <End Role="IMS_PURCHASE_ORDERS" Type="Self.IMS_PURCHASE_ORDERS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_PO_LINE_ITEMS" Type="Self.IMS_PO_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PURCHASE_ORDERS">
+              <PropertyRef Name="PURCHASEORDERID" />
+            </Principal>
+            <Dependent Role="IMS_PO_LINE_ITEMS">
+              <PropertyRef Name="PURCHASEORDERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PO_SHIPM_IMS_PURCHASE01">
+          <End Role="IMS_PURCHASE_ORDERS" Type="Self.IMS_PURCHASE_ORDERS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_PO_SHIPMENTS" Type="Self.IMS_PO_SHIPMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PURCHASE_ORDERS">
+              <PropertyRef Name="PURCHASEORDERID" />
+            </Principal>
+            <Dependent Role="IMS_PO_SHIPMENTS">
+              <PropertyRef Name="PURCHASEORDERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PO_SHIPM_IMS_SHIPMENT02">
+          <End Role="IMS_SHIPMENTS" Type="Self.IMS_SHIPMENTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_PO_SHIPMENTS" Type="Self.IMS_PO_SHIPMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENTS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Principal>
+            <Dependent Role="IMS_PO_SHIPMENTS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PRODUCTS_SUPPLIERS01">
+          <End Role="SUPPLIERS" Type="Self.SUPPLIERS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPPLIERS">
+              <PropertyRef Name="SUPPCODE" />
+            </Principal>
+            <Dependent Role="IMS_PRODUCTS">
+              <PropertyRef Name="SUPPCODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PURCHASE_IMS_COST_CEN01">
+          <End Role="IMS_COST_CENTERS" Type="Self.IMS_COST_CENTERS" Multiplicity="1" />
+          <End Role="IMS_PURCHASE_ORDERS" Type="Self.IMS_PURCHASE_ORDERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_COST_CENTERS">
+              <PropertyRef Name="COST_CENTER_ID" />
+            </Principal>
+            <Dependent Role="IMS_PURCHASE_ORDERS">
+              <PropertyRef Name="COST_CENTER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PURCHASE_IMS_SUPPLIER02">
+          <End Role="IMS_SUPPLIER_CUSTOMERS" Type="Self.IMS_SUPPLIER_CUSTOMERS" Multiplicity="1" />
+          <End Role="IMS_PURCHASE_ORDERS" Type="Self.IMS_PURCHASE_ORDERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SUPPLIER_CUSTOMERS">
+              <PropertyRef Name="CUSTOMERID" />
+            </Principal>
+            <Dependent Role="IMS_PURCHASE_ORDERS">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_PO_LINE_04">
+          <End Role="IMS_PO_LINE_ITEMS" Type="Self.IMS_PO_LINE_ITEMS" Multiplicity="0..1" />
+          <End Role="IMS_SHIPMENT_LINE_ITEMS" Type="Self.IMS_SHIPMENT_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PO_LINE_ITEMS">
+              <PropertyRef Name="ORDERLINEITEMID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_LINE_ITEMS">
+              <PropertyRef Name="ORDERLINEITEMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_PRODUCTS05">
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="1" />
+          <End Role="IMS_SHIPMENT_LINE_ITEMS" Type="Self.IMS_SHIPMENT_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_LINE_ITEMS">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SHIPMENT02">
+          <End Role="IMS_SHIPMENTS" Type="Self.IMS_SHIPMENTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_SHIPMENT_LINE_ITEMS" Type="Self.IMS_SHIPMENT_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENTS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_LINE_ITEMS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SHIPMENT03">
+          <End Role="IMS_SHIPMENT_CONTAINERS" Type="Self.IMS_SHIPMENT_CONTAINERS" Multiplicity="0..1" />
+          <End Role="IMS_SHIPMENT_LINE_ITEMS" Type="Self.IMS_SHIPMENT_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENT_CONTAINERS">
+              <PropertyRef Name="CONTAINERID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_LINE_ITEMS">
+              <PropertyRef Name="CONTAINERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SHIPMENT05">
+          <End Role="IMS_SHIPMENTS" Type="Self.IMS_SHIPMENTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_SHIPMENT_CONTAINERS" Type="Self.IMS_SHIPMENT_CONTAINERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENTS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_CONTAINERS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SHIPMENT06">
+          <End Role="IMS_SHIPMENT_LINE_ITEMS" Type="Self.IMS_SHIPMENT_LINE_ITEMS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_SHIPMENT_ITEMS" Type="Self.IMS_SHIPMENT_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENT_LINE_ITEMS">
+              <PropertyRef Name="SHIPMENTLINEITEMID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_ITEMS">
+              <PropertyRef Name="SHIPMENTLINEITEMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SHIPMENT07">
+          <End Role="IMS_SHIPMENT_CONTAINERS" Type="Self.IMS_SHIPMENT_CONTAINERS" Multiplicity="0..1" />
+          <End Role="IMS_SHIPMENT_ITEMS" Type="Self.IMS_SHIPMENT_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENT_CONTAINERS">
+              <PropertyRef Name="CONTAINERID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_ITEMS">
+              <PropertyRef Name="CONTAINERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SUPPLIER03">
+          <End Role="IMS_SUPPLIER_CUSTOMERS" Type="Self.IMS_SUPPLIER_CUSTOMERS" Multiplicity="1" />
+          <End Role="IMS_SHIPMENTS" Type="Self.IMS_SHIPMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SUPPLIER_CUSTOMERS">
+              <PropertyRef Name="CUSTOMERID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENTS">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IT_IMS_ITEMS08">
+          <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="1" />
+          <End Role="IMS_SHIPMENT_ITEMS" Type="Self.IMS_SHIPMENT_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_ITEMS">
+              <PropertyRef Name="ITEMID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_ITEMS">
+              <PropertyRef Name="ITEMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SUPPLIER_CU_SUPPLIERS01">
+          <End Role="SUPPLIERS" Type="Self.SUPPLIERS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_SUPPLIER_CUSTOMERS" Type="Self.IMS_SUPPLIER_CUSTOMERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPPLIERS">
+              <PropertyRef Name="SUPPCODE" />
+            </Principal>
+            <Dependent Role="IMS_SUPPLIER_CUSTOMERS">
+              <PropertyRef Name="SUPPCODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOCATIONS_ROOMS01">
+          <End Role="ROOMS" Type="Self.ROOMS" Multiplicity="0..1" />
+          <End Role="LOCATIONS" Type="Self.LOCATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROOMS">
+              <PropertyRef Name="ROOM_ID" />
+            </Principal>
+            <Dependent Role="LOCATIONS">
+              <PropertyRef Name="ROOM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_METADATA_LOO_METADATA_LOO01">
+          <End Role="METADATA_LOOKUPS" Type="Self.METADATA_LOOKUPS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="METADATA_LOOKUP_VALUES" Type="Self.METADATA_LOOKUP_VALUES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="METADATA_LOOKUPS">
+              <PropertyRef Name="NAME" />
+            </Principal>
+            <Dependent Role="METADATA_LOOKUP_VALUES">
+              <PropertyRef Name="LOOKUP_NAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROOMS_BUILDINGS01">
+          <End Role="BUILDINGS" Type="Self.BUILDINGS" Multiplicity="1" />
+          <End Role="ROOMS" Type="Self.ROOMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BUILDINGS">
+              <PropertyRef Name="BUILDING_ID" />
+            </Principal>
+            <Dependent Role="ROOMS">
+              <PropertyRef Name="BUILDING_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AlinIQ_DataModelStoreContainer">
+          <EntitySet Name="BUILDINGS" EntityType="Self.BUILDINGS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DEPARTMENTS" EntityType="Self.DEPARTMENTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_COST_CENTER_PRODUCTS" EntityType="Self.IMS_COST_CENTER_PRODUCTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_COST_CENTERS" EntityType="Self.IMS_COST_CENTERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_ITEMS" EntityType="Self.IMS_ITEMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_LOTS" EntityType="Self.IMS_LOTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_PHYSICAL_INVENTORY" EntityType="Self.IMS_PHYSICAL_INVENTORY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_PHYSICAL_INVENTORY_REV" EntityType="Self.IMS_PHYSICAL_INVENTORY_REV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_PHYSICAL_ITEMS" EntityType="Self.IMS_PHYSICAL_ITEMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_PHYSICALITEM_DIS_LOG" EntityType="Self.IMS_PHYSICALITEM_DIS_LOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_PO_LINE_ITEMS" EntityType="Self.IMS_PO_LINE_ITEMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_PO_SHIPMENTS" EntityType="Self.IMS_PO_SHIPMENTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_PRODUCTS" EntityType="Self.IMS_PRODUCTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_PURCHASE_ORDERS" EntityType="Self.IMS_PURCHASE_ORDERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_PURPOSES" EntityType="Self.IMS_PURPOSES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_SHIPMENT_CONTAINERS" EntityType="Self.IMS_SHIPMENT_CONTAINERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_SHIPMENT_ITEMS" EntityType="Self.IMS_SHIPMENT_ITEMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_SHIPMENT_LINE_ITEMS" EntityType="Self.IMS_SHIPMENT_LINE_ITEMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_SHIPMENTS" EntityType="Self.IMS_SHIPMENTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMS_SUPPLIER_CUSTOMERS" EntityType="Self.IMS_SUPPLIER_CUSTOMERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LIMSCOUNTERS" EntityType="Self.LIMSCOUNTERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOCATIONS" EntityType="Self.LOCATIONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="METADATA_LOOKUP_VALUES" EntityType="Self.METADATA_LOOKUP_VALUES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="METADATA_LOOKUPS" EntityType="Self.METADATA_LOOKUPS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROOMS" EntityType="Self.ROOMS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="X_TEST_RL" EntityType="Self.X_TEST_RL" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BUILDINGS_DEPARTMENTS01" Association="Self.FK_BUILDINGS_DEPARTMENTS01">
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+            <End Role="BUILDINGS" EntitySet="BUILDINGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_COST_CEN_IMS_COST_CEN02" Association="Self.FK_IMS_COST_CEN_IMS_COST_CEN02">
+            <End Role="IMS_COST_CENTERS" EntitySet="IMS_COST_CENTERS" />
+            <End Role="IMS_COST_CENTER_PRODUCTS" EntitySet="IMS_COST_CENTER_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_COST_CEN_IMS_PRODUCTS03" Association="Self.FK_IMS_COST_CEN_IMS_PRODUCTS03">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_COST_CENTER_PRODUCTS" EntitySet="IMS_COST_CENTER_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_COST_CEN_IMS_PRODUCTS04" Association="Self.FK_IMS_COST_CEN_IMS_PRODUCTS04">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_COST_CENTER_PRODUCTS" EntitySet="IMS_COST_CENTER_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_COST_CENT_DEPARTMENTS01" Association="Self.FK_IMS_COST_CENT_DEPARTMENTS01">
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+            <End Role="IMS_COST_CENTERS" EntitySet="IMS_COST_CENTERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_ITEMS_IMS_COST_CENTER03" Association="Self.FK_IMS_ITEMS_IMS_COST_CENTER03">
+            <End Role="IMS_COST_CENTERS" EntitySet="IMS_COST_CENTERS" />
+            <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_ITEMS_IMS_LOTS05" Association="Self.FK_IMS_ITEMS_IMS_LOTS05">
+            <End Role="IMS_LOTS" EntitySet="IMS_LOTS" />
+            <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_ITEMS_IMS_PRODUCTS06" Association="Self.FK_IMS_ITEMS_IMS_PRODUCTS06">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_ITEMS_LOCATIONS01" Association="Self.FK_IMS_ITEMS_LOCATIONS01">
+            <End Role="LOCATIONS" EntitySet="LOCATIONS" />
+            <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_LOTS_IMS_PRODUCTS01" Association="Self.FK_IMS_LOTS_IMS_PRODUCTS01">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_LOTS" EntitySet="IMS_LOTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSICAL01" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL01">
+            <End Role="IMS_PHYSICAL_INVENTORY" EntitySet="IMS_PHYSICAL_INVENTORY" />
+            <End Role="IMS_PHYSICAL_ITEMS" EntitySet="IMS_PHYSICAL_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSICAL03" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL03">
+            <End Role="IMS_PHYSICAL_INVENTORY" EntitySet="IMS_PHYSICAL_INVENTORY" />
+            <End Role="IMS_PHYSICALITEM_DIS_LOG" EntitySet="IMS_PHYSICALITEM_DIS_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSICAL04" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL04">
+            <End Role="IMS_PHYSICAL_ITEMS" EntitySet="IMS_PHYSICAL_ITEMS" />
+            <End Role="IMS_PHYSICALITEM_DIS_LOG" EntitySet="IMS_PHYSICALITEM_DIS_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSREV01" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSREV01">
+            <End Role="IMS_PHYSICAL_INVENTORY_REV" EntitySet="IMS_PHYSICAL_INVENTORY_REV" />
+            <End Role="IMS_PHYSICAL_INVENTORY" EntitySet="IMS_PHYSICAL_INVENTORY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PO_LINE__IMS_PRODUCTS02" Association="Self.FK_IMS_PO_LINE__IMS_PRODUCTS02">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_PO_LINE_ITEMS" EntitySet="IMS_PO_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PO_LINE__IMS_PRODUCTS03" Association="Self.FK_IMS_PO_LINE__IMS_PRODUCTS03">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_PO_LINE_ITEMS" EntitySet="IMS_PO_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PO_LINE__IMS_PURCHASE01" Association="Self.FK_IMS_PO_LINE__IMS_PURCHASE01">
+            <End Role="IMS_PURCHASE_ORDERS" EntitySet="IMS_PURCHASE_ORDERS" />
+            <End Role="IMS_PO_LINE_ITEMS" EntitySet="IMS_PO_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PO_SHIPM_IMS_PURCHASE01" Association="Self.FK_IMS_PO_SHIPM_IMS_PURCHASE01">
+            <End Role="IMS_PURCHASE_ORDERS" EntitySet="IMS_PURCHASE_ORDERS" />
+            <End Role="IMS_PO_SHIPMENTS" EntitySet="IMS_PO_SHIPMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PO_SHIPM_IMS_SHIPMENT02" Association="Self.FK_IMS_PO_SHIPM_IMS_SHIPMENT02">
+            <End Role="IMS_SHIPMENTS" EntitySet="IMS_SHIPMENTS" />
+            <End Role="IMS_PO_SHIPMENTS" EntitySet="IMS_PO_SHIPMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PRODUCTS_SUPPLIERS01" Association="Self.FK_IMS_PRODUCTS_SUPPLIERS01">
+            <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PURCHASE_IMS_COST_CEN01" Association="Self.FK_IMS_PURCHASE_IMS_COST_CEN01">
+            <End Role="IMS_COST_CENTERS" EntitySet="IMS_COST_CENTERS" />
+            <End Role="IMS_PURCHASE_ORDERS" EntitySet="IMS_PURCHASE_ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PURCHASE_IMS_SUPPLIER02" Association="Self.FK_IMS_PURCHASE_IMS_SUPPLIER02">
+            <End Role="IMS_SUPPLIER_CUSTOMERS" EntitySet="IMS_SUPPLIER_CUSTOMERS" />
+            <End Role="IMS_PURCHASE_ORDERS" EntitySet="IMS_PURCHASE_ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_PO_LINE_04" Association="Self.FK_IMS_SHIPMENT_IMS_PO_LINE_04">
+            <End Role="IMS_PO_LINE_ITEMS" EntitySet="IMS_PO_LINE_ITEMS" />
+            <End Role="IMS_SHIPMENT_LINE_ITEMS" EntitySet="IMS_SHIPMENT_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_PRODUCTS05" Association="Self.FK_IMS_SHIPMENT_IMS_PRODUCTS05">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_SHIPMENT_LINE_ITEMS" EntitySet="IMS_SHIPMENT_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SHIPMENT02" Association="Self.FK_IMS_SHIPMENT_IMS_SHIPMENT02">
+            <End Role="IMS_SHIPMENTS" EntitySet="IMS_SHIPMENTS" />
+            <End Role="IMS_SHIPMENT_LINE_ITEMS" EntitySet="IMS_SHIPMENT_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SHIPMENT03" Association="Self.FK_IMS_SHIPMENT_IMS_SHIPMENT03">
+            <End Role="IMS_SHIPMENT_CONTAINERS" EntitySet="IMS_SHIPMENT_CONTAINERS" />
+            <End Role="IMS_SHIPMENT_LINE_ITEMS" EntitySet="IMS_SHIPMENT_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SHIPMENT05" Association="Self.FK_IMS_SHIPMENT_IMS_SHIPMENT05">
+            <End Role="IMS_SHIPMENTS" EntitySet="IMS_SHIPMENTS" />
+            <End Role="IMS_SHIPMENT_CONTAINERS" EntitySet="IMS_SHIPMENT_CONTAINERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SHIPMENT06" Association="Self.FK_IMS_SHIPMENT_IMS_SHIPMENT06">
+            <End Role="IMS_SHIPMENT_LINE_ITEMS" EntitySet="IMS_SHIPMENT_LINE_ITEMS" />
+            <End Role="IMS_SHIPMENT_ITEMS" EntitySet="IMS_SHIPMENT_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SHIPMENT07" Association="Self.FK_IMS_SHIPMENT_IMS_SHIPMENT07">
+            <End Role="IMS_SHIPMENT_CONTAINERS" EntitySet="IMS_SHIPMENT_CONTAINERS" />
+            <End Role="IMS_SHIPMENT_ITEMS" EntitySet="IMS_SHIPMENT_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SUPPLIER03" Association="Self.FK_IMS_SHIPMENT_IMS_SUPPLIER03">
+            <End Role="IMS_SUPPLIER_CUSTOMERS" EntitySet="IMS_SUPPLIER_CUSTOMERS" />
+            <End Role="IMS_SHIPMENTS" EntitySet="IMS_SHIPMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IT_IMS_ITEMS08" Association="Self.FK_IMS_SHIPMENT_IT_IMS_ITEMS08">
+            <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+            <End Role="IMS_SHIPMENT_ITEMS" EntitySet="IMS_SHIPMENT_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SUPPLIER_CU_SUPPLIERS01" Association="Self.FK_IMS_SUPPLIER_CU_SUPPLIERS01">
+            <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
+            <End Role="IMS_SUPPLIER_CUSTOMERS" EntitySet="IMS_SUPPLIER_CUSTOMERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOCATIONS_ROOMS01" Association="Self.FK_LOCATIONS_ROOMS01">
+            <End Role="ROOMS" EntitySet="ROOMS" />
+            <End Role="LOCATIONS" EntitySet="LOCATIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_METADATA_LOO_METADATA_LOO01" Association="Self.FK_METADATA_LOO_METADATA_LOO01">
+            <End Role="METADATA_LOOKUPS" EntitySet="METADATA_LOOKUPS" />
+            <End Role="METADATA_LOOKUP_VALUES" EntitySet="METADATA_LOOKUP_VALUES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROOMS_BUILDINGS01" Association="Self.FK_ROOMS_BUILDINGS01">
+            <End Role="BUILDINGS" EntitySet="BUILDINGS" />
+            <End Role="ROOMS" EntitySet="ROOMS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AlinIQ_DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BUILDING">
+          <Key>
+            <PropertyRef Name="BUILDING_ID" />
+          </Key>
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BUILDING_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BUILDING_ID" Type="Int32" Nullable="false" />
+          <Property Name="BUILDING_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="DEPARTMENT" Relationship="Self.FK_BUILDINGS_DEPARTMENTS01" FromRole="BUILDINGS" ToRole="DEPARTMENTS" />
+          <NavigationProperty Name="ROOMS" Relationship="Self.FK_ROOMS_BUILDINGS01" FromRole="BUILDINGS" ToRole="ROOMS" />
+        </EntityType>
+        <EntityType Name="DEPARTMENT">
+          <Key>
+            <PropertyRef Name="DEPT" />
+          </Key>
+          <Property Name="ZIP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="STATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SHARESDB" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RASCLIENTID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PHONE1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="MANAGER" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KNOWN_AS" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FAX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DEPTCODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CITY" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS2" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS1" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="ACCOUNT_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SHORTDESCRIPTION" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BUILDINGS" Relationship="Self.FK_BUILDINGS_DEPARTMENTS01" FromRole="DEPARTMENTS" ToRole="BUILDINGS" />
+          <NavigationProperty Name="IMS_COST_CENTERS" Relationship="Self.FK_IMS_COST_CENT_DEPARTMENTS01" FromRole="DEPARTMENTS" ToRole="IMS_COST_CENTERS" />
+        </EntityType>
+        <EntityType Name="IMS_COST_CENTERS">
+          <Key>
+            <PropertyRef Name="COST_CENTER_ID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="COST_CENTER_ID" Type="Int32" Nullable="false" />
+          <Property Name="COST_CENTER_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="COST_CENTER_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="COST_CENTER_FULLNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="INTRANSIT" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="SHORTDESCRIPTION" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DEPARTMENT" Relationship="Self.FK_IMS_COST_CENT_DEPARTMENTS01" FromRole="IMS_COST_CENTERS" ToRole="DEPARTMENTS" />
+          <NavigationProperty Name="IMS_ITEMS" Relationship="Self.FK_IMS_ITEMS_IMS_COST_CENTER03" FromRole="IMS_COST_CENTERS" ToRole="IMS_ITEMS" />
+          <NavigationProperty Name="IMS_COST_CENTER_PRODUCTS" Relationship="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_COST_CEN02" FromRole="IMS_COST_CENTERS" ToRole="IMS_COST_CENTER_PRODUCTS" />
+          <NavigationProperty Name="IMS_PURCHASE_ORDERS" Relationship="AlinIQ_DataModel.FK_IMS_PURCHASE_IMS_COST_CEN01" FromRole="IMS_COST_CENTERS" ToRole="IMS_PURCHASE_ORDERS" />
+        </EntityType>
+        <EntityType Name="IMS_ITEMS">
+          <Key>
+            <PropertyRef Name="ITEMID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ITEMID" Type="Int32" Nullable="false" />
+          <Property Name="SGTIN" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="COSTCENTERID" Type="Int32" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STATUSTIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LOCATIONCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LOCATIONTIME" Type="DateTime" Precision="3" />
+          <Property Name="ITEMLOTID" Type="Int32" />
+          <Property Name="PRODUCTID" Type="Int32" Nullable="false" />
+          <Property Name="TAG_GTIN14" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="TAG_SN" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="CONSUMPTION_UNITS" Type="Int32" />
+          <Property Name="SYSTEM_GENERATED_TAG" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="QCSAMPLE" Type="Int32" Nullable="false" />
+          <Property Name="QCCHECKOUTTIME" Type="DateTime" Precision="3" />
+          <Property Name="QUARANTINESTATUS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CONSUMEREASON" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="BARCODE_FLAG" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="RECEIPTTIME" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="IMS_COST_CENTERS" Relationship="Self.FK_IMS_ITEMS_IMS_COST_CENTER03" FromRole="IMS_ITEMS" ToRole="IMS_COST_CENTERS" />
+          <NavigationProperty Name="IMS_LOTS" Relationship="Self.FK_IMS_ITEMS_IMS_LOTS05" FromRole="IMS_ITEMS" ToRole="IMS_LOTS" />
+          <NavigationProperty Name="IMS_PRODUCTS" Relationship="Self.FK_IMS_ITEMS_IMS_PRODUCTS06" FromRole="IMS_ITEMS" ToRole="IMS_PRODUCTS" />
+          <NavigationProperty Name="LOCATION" Relationship="Self.FK_IMS_ITEMS_LOCATIONS01" FromRole="IMS_ITEMS" ToRole="LOCATIONS" />
+          <NavigationProperty Name="IMS_SHIPMENT_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IT_IMS_ITEMS08" FromRole="IMS_ITEMS" ToRole="IMS_SHIPMENT_ITEMS" />
+        </EntityType>
+        <EntityType Name="IMS_LOTS">
+          <Key>
+            <PropertyRef Name="LOTID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="LOTID" Type="Int32" Nullable="false" />
+          <Property Name="LOTNUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LOTEXPIRATION" Type="DateTime" Precision="3" />
+          <Property Name="PRODUCTID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="IMS_ITEMS" Relationship="Self.FK_IMS_ITEMS_IMS_LOTS05" FromRole="IMS_LOTS" ToRole="IMS_ITEMS" />
+          <NavigationProperty Name="IMS_PRODUCTS" Relationship="Self.FK_IMS_LOTS_IMS_PRODUCTS01" FromRole="IMS_LOTS" ToRole="IMS_PRODUCTS" />
+        </EntityType>
+        <EntityType Name="IMS_PHYSICAL_INVENTORY">
+          <Key>
+            <PropertyRef Name="PHYSICALINVENTORYID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PHYSICALINVENTORYID" Type="Int32" Nullable="false" />
+          <Property Name="START_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="END_DATE" Type="DateTime" Precision="3" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="USRNAM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="LOCATION_NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PHYSICALINVENTORYREVIEWID" Type="Int32" />
+          <Property Name="LOCATIONCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LOCATION_SHORTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_PHYSICAL_ITEMS" Relationship="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL01" FromRole="IMS_PHYSICAL_INVENTORY" ToRole="IMS_PHYSICAL_ITEMS" />
+          <NavigationProperty Name="IMS_PHYSICALITEM_DIS_LOG" Relationship="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL03" FromRole="IMS_PHYSICAL_INVENTORY" ToRole="IMS_PHYSICALITEM_DIS_LOG" />
+          <NavigationProperty Name="IMS_PHYSICAL_INVENTORY_REV" Relationship="Self.FK_IMS_PHYSICAL_IMS_PHYSREV01" FromRole="IMS_PHYSICAL_INVENTORY" ToRole="IMS_PHYSICAL_INVENTORY_REV" />
+        </EntityType>
+        <EntityType Name="IMS_PHYSICAL_INVENTORY_REV">
+          <Key>
+            <PropertyRef Name="PHYSICALINVENTORYREVIEWID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PHYSICALINVENTORYREVIEWID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="START_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="END_TIME" Type="DateTime" Precision="3" />
+          <Property Name="USRNAM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TEXT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_PHYSICAL_INVENTORY" Relationship="Self.FK_IMS_PHYSICAL_IMS_PHYSREV01" FromRole="IMS_PHYSICAL_INVENTORY_REV" ToRole="IMS_PHYSICAL_INVENTORY" />
+        </EntityType>
+        <EntityType Name="IMS_PHYSICAL_ITEMS">
+          <Key>
+            <PropertyRef Name="PHYSICALITEMID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SGTIN" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PRODUCT_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SUPPLIER_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_TIME" Type="DateTime" Precision="3" />
+          <Property Name="LOTNUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHYSICALINVENTORYID" Type="Int32" Nullable="false" />
+          <Property Name="LOTEXPIRATION" Type="DateTime" Precision="3" />
+          <Property Name="PHYSICALITEMID" Type="Int32" Nullable="false" />
+          <Property Name="DISPOSITION_STATUS" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DISPOSITION_STATUS_TIME" Type="DateTime" Precision="3" />
+          <Property Name="DISPOSITION_USRNAM" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="TAG_GTIN14" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="TAG_SN" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DISPOSITION_PARM" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OVERRIDDEN" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="NEWLOCATIONCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DISCREPANCYNEWLOCATION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PROCESSED" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="DISCREPANCY" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="SCAN_ITEM_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PREVIOUS_LOCATION" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_PHYSICAL_INVENTORY" Relationship="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL01" FromRole="IMS_PHYSICAL_ITEMS" ToRole="IMS_PHYSICAL_INVENTORY" />
+          <NavigationProperty Name="IMS_PHYSICALITEM_DIS_LOG" Relationship="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL04" FromRole="IMS_PHYSICAL_ITEMS" ToRole="IMS_PHYSICALITEM_DIS_LOG" />
+          <Property Name="OVERRIDE_CODE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="DISPOSITION_CODE" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="DISCREPANCY_CODE" Type="Int32" />
+          <Property Name="TEST_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IMS_PHYSICALITEM_DIS_LOG">
+          <Key>
+            <PropertyRef Name="ORIGREC" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PHYSICALINVENTORYID" Type="Int32" Nullable="false" />
+          <Property Name="SGTIN" Type="String" MaxLength="52" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PHYSICALITEMID" Type="Int32" Nullable="false" />
+          <Property Name="PROCESSED_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_PHYSICAL_INVENTORY" Relationship="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL03" FromRole="IMS_PHYSICALITEM_DIS_LOG" ToRole="IMS_PHYSICAL_INVENTORY" />
+          <NavigationProperty Name="IMS_PHYSICAL_ITEMS" Relationship="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL04" FromRole="IMS_PHYSICALITEM_DIS_LOG" ToRole="IMS_PHYSICAL_ITEMS" />
+        </EntityType>
+        <EntityType Name="IMS_PRODUCTS">
+          <Key>
+            <PropertyRef Name="PRODUCTID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PRODUCTID" Type="Int32" Nullable="false" />
+          <Property Name="LISTNUMBER" Type="String" MaxLength="48" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GTIN" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" MaxLength="48" FixedLength="false" Unicode="true" />
+          <Property Name="QUANTITY" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="UNIT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE" Type="Decimal" Precision="20" Scale="2" />
+          <Property Name="STORAGE_CONDITION" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="HAS_LOTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="HAS_EXPIRY_DATE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IS_RFID_TAGGED" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IS_ORDERABLE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IS_VIRTUAL" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SUPPCODE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OLD_LISTNUMBER" Type="String" MaxLength="48" FixedLength="false" Unicode="true" />
+          <Property Name="NEW_LISTNUMBER" Type="String" MaxLength="48" FixedLength="false" Unicode="true" />
+          <Property Name="COMPANY_PREFIX" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="IS_EDITABLE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="CUSTOMERMATERIALID" Type="String" MaxLength="48" FixedLength="false" Unicode="true" />
+          <Property Name="CUSTOMERMATERIALGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SHORT_NAME" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="IS_NON_CANON" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ERP_KEY_DATA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_ITEMS" Relationship="Self.FK_IMS_ITEMS_IMS_PRODUCTS06" FromRole="IMS_PRODUCTS" ToRole="IMS_ITEMS" />
+          <NavigationProperty Name="IMS_LOTS" Relationship="Self.FK_IMS_LOTS_IMS_PRODUCTS01" FromRole="IMS_PRODUCTS" ToRole="IMS_LOTS" />
+          <NavigationProperty Name="SUPPLIER" Relationship="Self.FK_IMS_PRODUCTS_SUPPLIERS" FromRole="IMS_PRODUCTS" ToRole="SUPPLIERS" />
+          <NavigationProperty Name="SUPPLIER1" Relationship="Self.FK_IMS_PRODUCTS_SUPPLIERS01" FromRole="IMS_PRODUCTS" ToRole="SUPPLIERS" />
+          <NavigationProperty Name="IMS_COST_CENTER_PRODUCTS" Relationship="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_PRODUCTS03" FromRole="IMS_PRODUCTS" ToRole="IMS_COST_CENTER_PRODUCTS" />
+          <NavigationProperty Name="IMS_COST_CENTER_PRODUCTS1" Relationship="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_PRODUCTS04" FromRole="IMS_PRODUCTS" ToRole="IMS_COST_CENTER_PRODUCTS" />
+          <NavigationProperty Name="IMS_PO_LINE_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PRODUCTS02" FromRole="IMS_PRODUCTS" ToRole="IMS_PO_LINE_ITEMS" />
+          <NavigationProperty Name="IMS_PO_LINE_ITEMS1" Relationship="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PRODUCTS03" FromRole="IMS_PRODUCTS" ToRole="IMS_PO_LINE_ITEMS" />
+          <NavigationProperty Name="IMS_SHIPMENT_LINE_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_PRODUCTS05" FromRole="IMS_PRODUCTS" ToRole="IMS_SHIPMENT_LINE_ITEMS" />
+        </EntityType>
+        <EntityType Name="IMS_PURPOSES">
+          <Key>
+            <PropertyRef Name="USAGE_PURPOSE_CODE" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="USAGE_PURPOSE_CODE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="USAGE_PURPOSE_TEXT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SORTER" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOCATION">
+          <Key>
+            <PropertyRef Name="LOCATIONCODE" />
+          </Key>
+          <Property Name="SUBLOCATIONINFO_ID" Type="Int32" />
+          <Property Name="SERVGRP" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="ROOM_ID" Type="Int32" />
+          <Property Name="PARENT_LOCATION_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LONGNAME" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="LONGCODE" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="LOCATIONCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LOCATION_TYPE_ID" Type="Int32" />
+          <Property Name="LOCATION_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LOCATION1" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="IS_STORABLE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="IS_GXP" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="DISPLAY_LOCATIONCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DEPT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CONDITION" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="TO_BE_COUNTED" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="MIN_INTERVAL_COUNT" Type="Int32" />
+          <Property Name="LAST_COUNT_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MAX_INTERVAL_COUNT" Type="Int32" />
+          <Property Name="COUNT_INTERVAL_UNIT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SEALED" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="CAPACITY" Type="Int32" />
+          <Property Name="HOLDING_MATERIAL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="SORTER" Type="Int32" />
+          <Property Name="HAS_RFID_COVERAGE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="FULLNAME" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="INTRANSIT" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="IMS_ITEMS" Relationship="Self.FK_IMS_ITEMS_LOCATIONS01" FromRole="LOCATIONS" ToRole="IMS_ITEMS" />
+          <NavigationProperty Name="ROOM" Relationship="Self.FK_LOCATIONS_ROOMS01" FromRole="LOCATIONS" ToRole="ROOMS" />
+        </EntityType>
+        <EntityType Name="METADATA_LOOKUP_VALUES">
+          <Key>
+            <PropertyRef Name="VALUE" />
+            <PropertyRef Name="LOOKUP_NAME" />
+          </Key>
+          <Property Name="VALUE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TEXT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LOOKUP_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SORTER" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="METADATA_LOOKUPS" Relationship="Self.FK_METADATA_LOO_METADATA_LOO01" FromRole="METADATA_LOOKUP_VALUES" ToRole="METADATA_LOOKUPS" />
+        </EntityType>
+        <EntityType Name="METADATA_LOOKUPS">
+          <Key>
+            <PropertyRef Name="NAME" />
+          </Key>
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DATA_SOURCE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="USAGE" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="METADATA_LOOKUP_VALUES" Relationship="Self.FK_METADATA_LOO_METADATA_LOO01" FromRole="METADATA_LOOKUPS" ToRole="METADATA_LOOKUP_VALUES" />
+        </EntityType>
+        <EntityType Name="ROOM">
+          <Key>
+            <PropertyRef Name="ROOM_ID" />
+          </Key>
+          <Property Name="ROOM_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROOM_ID" Type="Int32" Nullable="false" />
+          <Property Name="ROOM_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BUILDING_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BUILDING" Relationship="Self.FK_ROOMS_BUILDINGS01" FromRole="ROOMS" ToRole="BUILDINGS" />
+          <NavigationProperty Name="LOCATIONS" Relationship="Self.FK_LOCATIONS_ROOMS01" FromRole="ROOMS" ToRole="LOCATIONS" />
+        </EntityType>
+        <EntityType Name="SUPPLIER">
+          <Key>
+            <PropertyRef Name="SUPPCODE" />
+          </Key>
+          <Property Name="SUPZIP" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SUPPST" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="SUPPNAM" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SUPPCODE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SUPPCITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SUPPADD_A" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+          <Property Name="SUPPADD" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGSTS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JJCODE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CURRENCYTYPE" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="SUPPID" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRYCODE" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="IS_EDITABLE" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="BLOCKOUTBOUND" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="QC_FAIL_RESOLUTION" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_PRODUCTS" Relationship="Self.FK_IMS_PRODUCTS_SUPPLIERS" FromRole="SUPPLIERS" ToRole="IMS_PRODUCTS" />
+          <NavigationProperty Name="IMS_PRODUCTS1" Relationship="Self.FK_IMS_PRODUCTS_SUPPLIERS01" FromRole="SUPPLIERS" ToRole="IMS_PRODUCTS" />
+          <NavigationProperty Name="IMS_SUPPLIER_CUSTOMERS" Relationship="AlinIQ_DataModel.FK_IMS_SUPPLIER_CU_SUPPLIERS01" FromRole="SUPPLIER" ToRole="IMS_SUPPLIER_CUSTOMERS" />
+        </EntityType>
+        <Association Name="FK_BUILDINGS_DEPARTMENTS01">
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENT" Multiplicity="1" />
+          <End Role="BUILDINGS" Type="Self.BUILDING" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENTS">
+              <PropertyRef Name="DEPT" />
+            </Principal>
+            <Dependent Role="BUILDINGS">
+              <PropertyRef Name="DEPT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROOMS_BUILDINGS01">
+          <End Role="BUILDINGS" Type="Self.BUILDING" Multiplicity="1" />
+          <End Role="ROOMS" Type="Self.ROOM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BUILDINGS">
+              <PropertyRef Name="BUILDING_ID" />
+            </Principal>
+            <Dependent Role="ROOMS">
+              <PropertyRef Name="BUILDING_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_COST_CENT_DEPARTMENTS01">
+          <End Role="DEPARTMENTS" Type="Self.DEPARTMENT" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_COST_CENTERS" Type="Self.IMS_COST_CENTERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DEPARTMENTS">
+              <PropertyRef Name="DEPT" />
+            </Principal>
+            <Dependent Role="IMS_COST_CENTERS">
+              <PropertyRef Name="DEPT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_ITEMS_IMS_COST_CENTER03">
+          <End Role="IMS_COST_CENTERS" Type="Self.IMS_COST_CENTERS" Multiplicity="0..1" />
+          <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_COST_CENTERS">
+              <PropertyRef Name="COST_CENTER_ID" />
+            </Principal>
+            <Dependent Role="IMS_ITEMS">
+              <PropertyRef Name="COSTCENTERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_ITEMS_IMS_LOTS05">
+          <End Role="IMS_LOTS" Type="Self.IMS_LOTS" Multiplicity="0..1" />
+          <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_LOTS">
+              <PropertyRef Name="LOTID" />
+            </Principal>
+            <Dependent Role="IMS_ITEMS">
+              <PropertyRef Name="ITEMLOTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_ITEMS_IMS_PRODUCTS06">
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="1" />
+          <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_ITEMS">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_ITEMS_LOCATIONS01">
+          <End Role="LOCATIONS" Type="Self.LOCATION" Multiplicity="0..1" />
+          <End Role="IMS_ITEMS" Type="Self.IMS_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOCATIONS">
+              <PropertyRef Name="LOCATIONCODE" />
+            </Principal>
+            <Dependent Role="IMS_ITEMS">
+              <PropertyRef Name="LOCATIONCODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_LOTS_IMS_PRODUCTS01">
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_LOTS" Type="Self.IMS_LOTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_LOTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PHYSICAL_IMS_PHYSICAL01">
+          <End Role="IMS_PHYSICAL_INVENTORY" Type="Self.IMS_PHYSICAL_INVENTORY" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_PHYSICAL_ITEMS" Type="Self.IMS_PHYSICAL_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PHYSICAL_INVENTORY">
+              <PropertyRef Name="PHYSICALINVENTORYID" />
+            </Principal>
+            <Dependent Role="IMS_PHYSICAL_ITEMS">
+              <PropertyRef Name="PHYSICALINVENTORYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PHYSICAL_IMS_PHYSICAL03">
+          <End Role="IMS_PHYSICAL_INVENTORY" Type="Self.IMS_PHYSICAL_INVENTORY" Multiplicity="1" />
+          <End Role="IMS_PHYSICALITEM_DIS_LOG" Type="Self.IMS_PHYSICALITEM_DIS_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PHYSICAL_INVENTORY">
+              <PropertyRef Name="PHYSICALINVENTORYID" />
+            </Principal>
+            <Dependent Role="IMS_PHYSICALITEM_DIS_LOG">
+              <PropertyRef Name="PHYSICALINVENTORYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PHYSICAL_IMS_PHYSREV01">
+          <End Role="IMS_PHYSICAL_INVENTORY_REV" Type="Self.IMS_PHYSICAL_INVENTORY_REV" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_PHYSICAL_INVENTORY" Type="Self.IMS_PHYSICAL_INVENTORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PHYSICAL_INVENTORY_REV">
+              <PropertyRef Name="PHYSICALINVENTORYREVIEWID" />
+            </Principal>
+            <Dependent Role="IMS_PHYSICAL_INVENTORY">
+              <PropertyRef Name="PHYSICALINVENTORYREVIEWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PHYSICAL_IMS_PHYSICAL04">
+          <End Role="IMS_PHYSICAL_ITEMS" Type="Self.IMS_PHYSICAL_ITEMS" Multiplicity="1" />
+          <End Role="IMS_PHYSICALITEM_DIS_LOG" Type="Self.IMS_PHYSICALITEM_DIS_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PHYSICAL_ITEMS">
+              <PropertyRef Name="PHYSICALITEMID" />
+            </Principal>
+            <Dependent Role="IMS_PHYSICALITEM_DIS_LOG">
+              <PropertyRef Name="PHYSICALITEMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PRODUCTS_SUPPLIERS">
+          <End Role="SUPPLIERS" Type="Self.SUPPLIER" Multiplicity="1" />
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPPLIERS">
+              <PropertyRef Name="SUPPCODE" />
+            </Principal>
+            <Dependent Role="IMS_PRODUCTS">
+              <PropertyRef Name="SUPPCODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PRODUCTS_SUPPLIERS01">
+          <End Role="SUPPLIERS" Type="Self.SUPPLIER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="IMS_PRODUCTS" Type="Self.IMS_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPPLIERS">
+              <PropertyRef Name="SUPPCODE" />
+            </Principal>
+            <Dependent Role="IMS_PRODUCTS">
+              <PropertyRef Name="SUPPCODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LOCATIONS_ROOMS01">
+          <End Role="ROOMS" Type="Self.ROOM" Multiplicity="0..1" />
+          <End Role="LOCATIONS" Type="Self.LOCATION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROOMS">
+              <PropertyRef Name="ROOM_ID" />
+            </Principal>
+            <Dependent Role="LOCATIONS">
+              <PropertyRef Name="ROOM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_METADATA_LOO_METADATA_LOO01">
+          <End Role="METADATA_LOOKUPS" Type="Self.METADATA_LOOKUPS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="METADATA_LOOKUP_VALUES" Type="Self.METADATA_LOOKUP_VALUES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="METADATA_LOOKUPS">
+              <PropertyRef Name="NAME" />
+            </Principal>
+            <Dependent Role="METADATA_LOOKUP_VALUES">
+              <PropertyRef Name="LOOKUP_NAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AlinIQ_DataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BUILDINGS" EntityType="Self.BUILDING" />
+          <EntitySet Name="DEPARTMENTS" EntityType="Self.DEPARTMENT" />
+          <EntitySet Name="IMS_COST_CENTERS" EntityType="Self.IMS_COST_CENTERS" />
+          <EntitySet Name="IMS_ITEMS" EntityType="Self.IMS_ITEMS" />
+          <EntitySet Name="IMS_LOTS" EntityType="Self.IMS_LOTS" />
+          <EntitySet Name="IMS_PHYSICAL_INVENTORY" EntityType="Self.IMS_PHYSICAL_INVENTORY" />
+          <EntitySet Name="IMS_PHYSICAL_INVENTORY_REV" EntityType="Self.IMS_PHYSICAL_INVENTORY_REV" />
+          <EntitySet Name="IMS_PHYSICAL_ITEMS" EntityType="Self.IMS_PHYSICAL_ITEMS" />
+          <EntitySet Name="IMS_PHYSICALITEM_DIS_LOG" EntityType="Self.IMS_PHYSICALITEM_DIS_LOG" />
+          <EntitySet Name="IMS_PRODUCTS" EntityType="Self.IMS_PRODUCTS" />
+          <EntitySet Name="IMS_PURPOSES" EntityType="Self.IMS_PURPOSES" />
+          <EntitySet Name="LOCATIONS" EntityType="Self.LOCATION" />
+          <EntitySet Name="METADATA_LOOKUP_VALUES" EntityType="Self.METADATA_LOOKUP_VALUES" />
+          <EntitySet Name="METADATA_LOOKUPS" EntityType="Self.METADATA_LOOKUPS" />
+          <EntitySet Name="ROOMS" EntityType="Self.ROOM" />
+          <EntitySet Name="SUPPLIERS" EntityType="Self.SUPPLIER" />
+          <AssociationSet Name="FK_BUILDINGS_DEPARTMENTS01" Association="Self.FK_BUILDINGS_DEPARTMENTS01">
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+            <End Role="BUILDINGS" EntitySet="BUILDINGS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROOMS_BUILDINGS01" Association="Self.FK_ROOMS_BUILDINGS01">
+            <End Role="BUILDINGS" EntitySet="BUILDINGS" />
+            <End Role="ROOMS" EntitySet="ROOMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_COST_CENT_DEPARTMENTS01" Association="Self.FK_IMS_COST_CENT_DEPARTMENTS01">
+            <End Role="DEPARTMENTS" EntitySet="DEPARTMENTS" />
+            <End Role="IMS_COST_CENTERS" EntitySet="IMS_COST_CENTERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_ITEMS_IMS_COST_CENTER03" Association="Self.FK_IMS_ITEMS_IMS_COST_CENTER03">
+            <End Role="IMS_COST_CENTERS" EntitySet="IMS_COST_CENTERS" />
+            <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_ITEMS_IMS_LOTS05" Association="Self.FK_IMS_ITEMS_IMS_LOTS05">
+            <End Role="IMS_LOTS" EntitySet="IMS_LOTS" />
+            <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_ITEMS_IMS_PRODUCTS06" Association="Self.FK_IMS_ITEMS_IMS_PRODUCTS06">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_ITEMS_LOCATIONS01" Association="Self.FK_IMS_ITEMS_LOCATIONS01">
+            <End Role="LOCATIONS" EntitySet="LOCATIONS" />
+            <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_LOTS_IMS_PRODUCTS01" Association="Self.FK_IMS_LOTS_IMS_PRODUCTS01">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_LOTS" EntitySet="IMS_LOTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSICAL01" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL01">
+            <End Role="IMS_PHYSICAL_INVENTORY" EntitySet="IMS_PHYSICAL_INVENTORY" />
+            <End Role="IMS_PHYSICAL_ITEMS" EntitySet="IMS_PHYSICAL_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSICAL03" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL03">
+            <End Role="IMS_PHYSICAL_INVENTORY" EntitySet="IMS_PHYSICAL_INVENTORY" />
+            <End Role="IMS_PHYSICALITEM_DIS_LOG" EntitySet="IMS_PHYSICALITEM_DIS_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSREV01" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSREV01">
+            <End Role="IMS_PHYSICAL_INVENTORY_REV" EntitySet="IMS_PHYSICAL_INVENTORY_REV" />
+            <End Role="IMS_PHYSICAL_INVENTORY" EntitySet="IMS_PHYSICAL_INVENTORY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PHYSICAL_IMS_PHYSICAL04" Association="Self.FK_IMS_PHYSICAL_IMS_PHYSICAL04">
+            <End Role="IMS_PHYSICAL_ITEMS" EntitySet="IMS_PHYSICAL_ITEMS" />
+            <End Role="IMS_PHYSICALITEM_DIS_LOG" EntitySet="IMS_PHYSICALITEM_DIS_LOG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PRODUCTS_SUPPLIERS" Association="Self.FK_IMS_PRODUCTS_SUPPLIERS">
+            <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PRODUCTS_SUPPLIERS01" Association="Self.FK_IMS_PRODUCTS_SUPPLIERS01">
+            <End Role="SUPPLIERS" EntitySet="SUPPLIERS" />
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LOCATIONS_ROOMS01" Association="Self.FK_LOCATIONS_ROOMS01">
+            <End Role="ROOMS" EntitySet="ROOMS" />
+            <End Role="LOCATIONS" EntitySet="LOCATIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_METADATA_LOO_METADATA_LOO01" Association="Self.FK_METADATA_LOO_METADATA_LOO01">
+            <End Role="METADATA_LOOKUPS" EntitySet="METADATA_LOOKUPS" />
+            <End Role="METADATA_LOOKUP_VALUES" EntitySet="METADATA_LOOKUP_VALUES" />
+          </AssociationSet>
+          <EntitySet Name="LIMSCOUNTERS" EntityType="AlinIQ_DataModel.LIMSCOUNTER" />
+          <EntitySet Name="X_TEST_RL" EntityType="AlinIQ_DataModel.X_TEST_RL" />
+          <EntitySet Name="IMS_COST_CENTER_PRODUCTS" EntityType="AlinIQ_DataModel.IMS_COST_CENTER_PRODUCTS" />
+          <AssociationSet Name="FK_IMS_COST_CEN_IMS_COST_CEN02" Association="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_COST_CEN02">
+            <End Role="IMS_COST_CENTERS" EntitySet="IMS_COST_CENTERS" />
+            <End Role="IMS_COST_CENTER_PRODUCTS" EntitySet="IMS_COST_CENTER_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_COST_CEN_IMS_PRODUCTS03" Association="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_PRODUCTS03">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_COST_CENTER_PRODUCTS" EntitySet="IMS_COST_CENTER_PRODUCTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_COST_CEN_IMS_PRODUCTS04" Association="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_PRODUCTS04">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_COST_CENTER_PRODUCTS" EntitySet="IMS_COST_CENTER_PRODUCTS" />
+          </AssociationSet>
+          <EntitySet Name="IMS_PO_LINE_ITEMS" EntityType="AlinIQ_DataModel.IMS_PO_LINE_ITEMS" />
+          <EntitySet Name="IMS_PO_SHIPMENTS" EntityType="AlinIQ_DataModel.IMS_PO_SHIPMENTS" />
+          <EntitySet Name="IMS_PURCHASE_ORDERS" EntityType="AlinIQ_DataModel.IMS_PURCHASE_ORDERS" />
+          <EntitySet Name="IMS_SHIPMENT_ITEMS" EntityType="AlinIQ_DataModel.IMS_SHIPMENT_ITEMS" />
+          <EntitySet Name="IMS_SHIPMENT_LINE_ITEMS" EntityType="AlinIQ_DataModel.IMS_SHIPMENT_LINE_ITEMS" />
+          <EntitySet Name="IMS_SHIPMENTS" EntityType="AlinIQ_DataModel.IMS_SHIPMENTS" />
+          <AssociationSet Name="FK_IMS_PURCHASE_IMS_COST_CEN01" Association="AlinIQ_DataModel.FK_IMS_PURCHASE_IMS_COST_CEN01">
+            <End Role="IMS_COST_CENTERS" EntitySet="IMS_COST_CENTERS" />
+            <End Role="IMS_PURCHASE_ORDERS" EntitySet="IMS_PURCHASE_ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IT_IMS_ITEMS08" Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IT_IMS_ITEMS08">
+            <End Role="IMS_ITEMS" EntitySet="IMS_ITEMS" />
+            <End Role="IMS_SHIPMENT_ITEMS" EntitySet="IMS_SHIPMENT_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PO_LINE__IMS_PRODUCTS02" Association="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PRODUCTS02">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_PO_LINE_ITEMS" EntitySet="IMS_PO_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PO_LINE__IMS_PRODUCTS03" Association="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PRODUCTS03">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_PO_LINE_ITEMS" EntitySet="IMS_PO_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PO_LINE__IMS_PURCHASE01" Association="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PURCHASE01">
+            <End Role="IMS_PURCHASE_ORDERS" EntitySet="IMS_PURCHASE_ORDERS" />
+            <End Role="IMS_PO_LINE_ITEMS" EntitySet="IMS_PO_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_PO_LINE_04" Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_PO_LINE_04">
+            <End Role="IMS_PO_LINE_ITEMS" EntitySet="IMS_PO_LINE_ITEMS" />
+            <End Role="IMS_SHIPMENT_LINE_ITEMS" EntitySet="IMS_SHIPMENT_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PO_SHIPM_IMS_PURCHASE01" Association="AlinIQ_DataModel.FK_IMS_PO_SHIPM_IMS_PURCHASE01">
+            <End Role="IMS_PURCHASE_ORDERS" EntitySet="IMS_PURCHASE_ORDERS" />
+            <End Role="IMS_PO_SHIPMENTS" EntitySet="IMS_PO_SHIPMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_PO_SHIPM_IMS_SHIPMENT02" Association="AlinIQ_DataModel.FK_IMS_PO_SHIPM_IMS_SHIPMENT02">
+            <End Role="IMS_SHIPMENTS" EntitySet="IMS_SHIPMENTS" />
+            <End Role="IMS_PO_SHIPMENTS" EntitySet="IMS_PO_SHIPMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_PRODUCTS05" Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_PRODUCTS05">
+            <End Role="IMS_PRODUCTS" EntitySet="IMS_PRODUCTS" />
+            <End Role="IMS_SHIPMENT_LINE_ITEMS" EntitySet="IMS_SHIPMENT_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SHIPMENT06" Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT06">
+            <End Role="IMS_SHIPMENT_LINE_ITEMS" EntitySet="IMS_SHIPMENT_LINE_ITEMS" />
+            <End Role="IMS_SHIPMENT_ITEMS" EntitySet="IMS_SHIPMENT_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SHIPMENT02" Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT02">
+            <End Role="IMS_SHIPMENTS" EntitySet="IMS_SHIPMENTS" />
+            <End Role="IMS_SHIPMENT_LINE_ITEMS" EntitySet="IMS_SHIPMENT_LINE_ITEMS" />
+          </AssociationSet>
+          <EntitySet Name="IMS_SUPPLIER_CUSTOMERS" EntityType="AlinIQ_DataModel.IMS_SUPPLIER_CUSTOMERS" />
+          <AssociationSet Name="FK_IMS_PURCHASE_IMS_SUPPLIER02" Association="AlinIQ_DataModel.FK_IMS_PURCHASE_IMS_SUPPLIER02">
+            <End Role="IMS_SUPPLIER_CUSTOMERS" EntitySet="IMS_SUPPLIER_CUSTOMERS" />
+            <End Role="IMS_PURCHASE_ORDERS" EntitySet="IMS_PURCHASE_ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SUPPLIER03" Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SUPPLIER03">
+            <End Role="IMS_SUPPLIER_CUSTOMERS" EntitySet="IMS_SUPPLIER_CUSTOMERS" />
+            <End Role="IMS_SHIPMENTS" EntitySet="IMS_SHIPMENTS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SUPPLIER_CU_SUPPLIERS01" Association="AlinIQ_DataModel.FK_IMS_SUPPLIER_CU_SUPPLIERS01">
+            <End Role="SUPPLIER" EntitySet="SUPPLIERS" />
+            <End Role="IMS_SUPPLIER_CUSTOMERS" EntitySet="IMS_SUPPLIER_CUSTOMERS" />
+          </AssociationSet>
+          <EntitySet Name="IMS_SHIPMENT_CONTAINERS" EntityType="AlinIQ_DataModel.IMS_SHIPMENT_CONTAINERS" />
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SHIPMENT03" Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT03">
+            <End Role="IMS_SHIPMENT_CONTAINERS" EntitySet="IMS_SHIPMENT_CONTAINERS" />
+            <End Role="IMS_SHIPMENT_LINE_ITEMS" EntitySet="IMS_SHIPMENT_LINE_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SHIPMENT05" Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT05">
+            <End Role="IMS_SHIPMENTS" EntitySet="IMS_SHIPMENTS" />
+            <End Role="IMS_SHIPMENT_CONTAINERS" EntitySet="IMS_SHIPMENT_CONTAINERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IMS_SHIPMENT_IMS_SHIPMENT07" Association="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT07">
+            <End Role="IMS_SHIPMENT_CONTAINERS" EntitySet="IMS_SHIPMENT_CONTAINERS" />
+            <End Role="IMS_SHIPMENT_ITEMS" EntitySet="IMS_SHIPMENT_ITEMS" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="LIMSCOUNTER">
+          <Key>
+            <PropertyRef Name="ORIGREC" />
+          </Key>
+          <Property Name="TABLNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PREFIX" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LIMSCOUNTER1" Type="Int32" Nullable="false" />
+          <Property Name="FLDNAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="X_TEST_RL">
+          <Key>
+            <PropertyRef Name="ORIGREC" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="LARGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IMS_COST_CENTER_PRODUCTS">
+          <Key>
+            <PropertyRef Name="COSTCENTERID" />
+            <PropertyRef Name="PRODUCTID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="MINITEMLEVEL" Type="Int32" />
+          <Property Name="MAXITEMLEVEL" Type="Int32" />
+          <Property Name="COSTCENTERID" Type="Int32" Nullable="false" />
+          <Property Name="PRODUCTID" Type="Int32" Nullable="false" />
+          <Property Name="IS_STOCK_CONTROLLED" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="MAKE_ORDER_SUGGESTIONS" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="ALT_ORDERPRODUCTID" Type="Int32" />
+          <Property Name="CONSUMPTIONUNITS" Type="Int32" />
+          <Property Name="QUARANTINEMETHOD" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="QUATANTINELOCATIONCODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_COST_CENTERS" Relationship="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_COST_CEN02" FromRole="IMS_COST_CENTER_PRODUCTS" ToRole="IMS_COST_CENTERS" />
+          <NavigationProperty Name="IMS_PRODUCTS" Relationship="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_PRODUCTS03" FromRole="IMS_COST_CENTER_PRODUCTS" ToRole="IMS_PRODUCTS" />
+          <NavigationProperty Name="IMS_PRODUCTS1" Relationship="AlinIQ_DataModel.FK_IMS_COST_CEN_IMS_PRODUCTS04" FromRole="IMS_COST_CENTER_PRODUCTS" ToRole="IMS_PRODUCTS" />
+        </EntityType>
+        <Association Name="FK_IMS_COST_CEN_IMS_COST_CEN02">
+          <End Type="AlinIQ_DataModel.IMS_COST_CENTERS" Role="IMS_COST_CENTERS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlinIQ_DataModel.IMS_COST_CENTER_PRODUCTS" Role="IMS_COST_CENTER_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_COST_CENTERS">
+              <PropertyRef Name="COST_CENTER_ID" />
+            </Principal>
+            <Dependent Role="IMS_COST_CENTER_PRODUCTS">
+              <PropertyRef Name="COSTCENTERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_COST_CEN_IMS_PRODUCTS03">
+          <End Type="AlinIQ_DataModel.IMS_PRODUCTS" Role="IMS_PRODUCTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlinIQ_DataModel.IMS_COST_CENTER_PRODUCTS" Role="IMS_COST_CENTER_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_COST_CENTER_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_COST_CEN_IMS_PRODUCTS04">
+          <End Type="AlinIQ_DataModel.IMS_PRODUCTS" Role="IMS_PRODUCTS" Multiplicity="0..1" />
+          <End Type="AlinIQ_DataModel.IMS_COST_CENTER_PRODUCTS" Role="IMS_COST_CENTER_PRODUCTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_COST_CENTER_PRODUCTS">
+              <PropertyRef Name="ALT_ORDERPRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="IMS_PO_LINE_ITEMS">
+          <Key>
+            <PropertyRef Name="ORDERLINEITEMID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="ORDERLINEITEMID" Type="Int32" Nullable="false" />
+          <Property Name="LINE_ITEM_NUMBER" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="QUANTITY_ORDERED" Type="Int32" Nullable="false" />
+          <Property Name="QUANTITY_ACCEPTED" Type="Int32" />
+          <Property Name="QUANTITY_BACKORDERED" Type="Int32" />
+          <Property Name="QUANTITY_DELETED" Type="Int32" />
+          <Property Name="QUANTITY_SUBSTITUTED" Type="Int32" />
+          <Property Name="UNIT_PRICE" Type="Decimal" Precision="20" Scale="2" />
+          <Property Name="STATUS" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PURCHASEORDERID" Type="Int32" Nullable="false" />
+          <Property Name="PRODUCTID" Type="Int32" Nullable="false" />
+          <Property Name="SUB_PRODUCTID" Type="Int32" />
+          <Property Name="SUB_COMMENT" Type="String" MaxLength="264" FixedLength="false" Unicode="true" />
+          <Property Name="COMMENTS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="QUANTITY_PENDING" Type="Int32" Nullable="false" />
+          <Property Name="QUANTITY_EXPECTED" Type="Int32" />
+          <Property Name="QUANTITY_RECEIVED" Type="Int32" />
+          <Property Name="ERP_PO_LINE_NUMBER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="ERP_PO_NUM" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_PRODUCTS" Relationship="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PRODUCTS02" FromRole="IMS_PO_LINE_ITEMS" ToRole="IMS_PRODUCTS" />
+          <NavigationProperty Name="IMS_PRODUCTS1" Relationship="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PRODUCTS03" FromRole="IMS_PO_LINE_ITEMS" ToRole="IMS_PRODUCTS" />
+          <NavigationProperty Name="IMS_PURCHASE_ORDERS" Relationship="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PURCHASE01" FromRole="IMS_PO_LINE_ITEMS" ToRole="IMS_PURCHASE_ORDERS" />
+          <NavigationProperty Name="IMS_SHIPMENT_LINE_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_PO_LINE_04" FromRole="IMS_PO_LINE_ITEMS" ToRole="IMS_SHIPMENT_LINE_ITEMS" />
+        </EntityType>
+        <EntityType Name="IMS_PO_SHIPMENTS">
+          <Key>
+            <PropertyRef Name="PURCHASEORDERID" />
+            <PropertyRef Name="SHIPMENTID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="PURCHASEORDERID" Type="Int32" Nullable="false" />
+          <Property Name="SHIPMENTID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="IMS_PURCHASE_ORDERS" Relationship="AlinIQ_DataModel.FK_IMS_PO_SHIPM_IMS_PURCHASE01" FromRole="IMS_PO_SHIPMENTS" ToRole="IMS_PURCHASE_ORDERS" />
+          <NavigationProperty Name="IMS_SHIPMENTS" Relationship="AlinIQ_DataModel.FK_IMS_PO_SHIPM_IMS_SHIPMENT02" FromRole="IMS_PO_SHIPMENTS" ToRole="IMS_SHIPMENTS" />
+        </EntityType>
+        <EntityType Name="IMS_PURCHASE_ORDERS">
+          <Key>
+            <PropertyRef Name="PURCHASEORDERID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="PURCHASEORDERID" Type="Int32" Nullable="false" />
+          <Property Name="PO_NUMBER" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="PO_CUSTOMER_REF" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PO_SUPPLIER_REF" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="APPROVAL_DATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CONFIRM_DATE" Type="DateTime" Precision="3" />
+          <Property Name="PROCESS_DATE" Type="DateTime" Precision="3" />
+          <Property Name="STATUS" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="COST_CENTER_ID" Type="Int32" Nullable="false" />
+          <Property Name="CUSTOMERID" Type="Int32" Nullable="false" />
+          <Property Name="REQ_SHIP_DATE" Type="DateTime" Precision="3" />
+          <Property Name="TXSTATUS" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TXSTATUS_TIME" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ACKSTATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ACKSTATUS_TIME" Type="DateTime" Precision="3" />
+          <Property Name="ERP_PO_NUMBER" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ERP_KEY_DATA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_COST_CENTERS" Relationship="AlinIQ_DataModel.FK_IMS_PURCHASE_IMS_COST_CEN01" FromRole="IMS_PURCHASE_ORDERS" ToRole="IMS_COST_CENTERS" />
+          <NavigationProperty Name="IMS_PO_LINE_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_PO_LINE__IMS_PURCHASE01" FromRole="IMS_PURCHASE_ORDERS" ToRole="IMS_PO_LINE_ITEMS" />
+          <NavigationProperty Name="IMS_PO_SHIPMENTS" Relationship="AlinIQ_DataModel.FK_IMS_PO_SHIPM_IMS_PURCHASE01" FromRole="IMS_PURCHASE_ORDERS" ToRole="IMS_PO_SHIPMENTS" />
+          <NavigationProperty Name="IMS_SUPPLIER_CUSTOMERS" Relationship="AlinIQ_DataModel.FK_IMS_PURCHASE_IMS_SUPPLIER02" FromRole="IMS_PURCHASE_ORDERS" ToRole="IMS_SUPPLIER_CUSTOMERS" />
+        </EntityType>
+        <EntityType Name="IMS_SHIPMENT_ITEMS">
+          <Key>
+            <PropertyRef Name="SHIPMENTITEMID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="SHIPMENTITEMID" Type="Int32" Nullable="false" />
+          <Property Name="CONTAINERID" Type="Int32" />
+          <Property Name="SHIPMENTLINEITEMID" Type="Int32" Nullable="false" />
+          <Property Name="TAGREADSTATUS" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="TAGREADTIME" Type="DateTime" Precision="3" />
+          <Property Name="ITEMID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="IMS_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IT_IMS_ITEMS08" FromRole="IMS_SHIPMENT_ITEMS" ToRole="IMS_ITEMS" />
+          <NavigationProperty Name="IMS_SHIPMENT_LINE_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT06" FromRole="IMS_SHIPMENT_ITEMS" ToRole="IMS_SHIPMENT_LINE_ITEMS" />
+          <NavigationProperty Name="IMS_SHIPMENT_CONTAINERS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT07" FromRole="IMS_SHIPMENT_ITEMS" ToRole="IMS_SHIPMENT_CONTAINERS" />
+        </EntityType>
+        <EntityType Name="IMS_SHIPMENT_LINE_ITEMS">
+          <Key>
+            <PropertyRef Name="SHIPMENTLINEITEMID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="SHIPMENTLINEITEMID" Type="Int32" Nullable="false" />
+          <Property Name="SHIPMENTID" Type="Int32" Nullable="false" />
+          <Property Name="ORDERLINEITEMID" Type="Int32" />
+          <Property Name="CONTAINERID" Type="Int32" />
+          <Property Name="QUANTITYSHIPPED" Type="Int32" Nullable="false" />
+          <Property Name="LOTNUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LOTEXPIRATION" Type="DateTime" Precision="3" />
+          <Property Name="PRODUCTID" Type="Int32" Nullable="false" />
+          <Property Name="PO_NUMBER" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="LINE_ITEM_NUMBER" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="PO_CUSTOMER_REF" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_PO_LINE_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_PO_LINE_04" FromRole="IMS_SHIPMENT_LINE_ITEMS" ToRole="IMS_PO_LINE_ITEMS" />
+          <NavigationProperty Name="IMS_PRODUCTS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_PRODUCTS05" FromRole="IMS_SHIPMENT_LINE_ITEMS" ToRole="IMS_PRODUCTS" />
+          <NavigationProperty Name="IMS_SHIPMENT_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT06" FromRole="IMS_SHIPMENT_LINE_ITEMS" ToRole="IMS_SHIPMENT_ITEMS" />
+          <NavigationProperty Name="IMS_SHIPMENTS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT02" FromRole="IMS_SHIPMENT_LINE_ITEMS" ToRole="IMS_SHIPMENTS" />
+          <NavigationProperty Name="IMS_SHIPMENT_CONTAINERS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT03" FromRole="IMS_SHIPMENT_LINE_ITEMS" ToRole="IMS_SHIPMENT_CONTAINERS" />
+        </EntityType>
+        <EntityType Name="IMS_SHIPMENTS">
+          <Key>
+            <PropertyRef Name="SHIPMENTID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="SHIPMENTID" Type="Int32" Nullable="false" />
+          <Property Name="ASNNUMBER" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ASNCREATIONDATE" Type="DateTime" Precision="3" />
+          <Property Name="RECEIVESTATUS" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="SHIPMENTDATE" Type="DateTime" Precision="3" />
+          <Property Name="STATUSTIME" Type="DateTime" Precision="3" />
+          <Property Name="CUSTOMERID" Type="Int32" Nullable="false" />
+          <Property Name="HAS_SYSTEM_GENERATED_TAGS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="IMS_PO_SHIPMENTS" Relationship="AlinIQ_DataModel.FK_IMS_PO_SHIPM_IMS_SHIPMENT02" FromRole="IMS_SHIPMENTS" ToRole="IMS_PO_SHIPMENTS" />
+          <NavigationProperty Name="IMS_SHIPMENT_LINE_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT02" FromRole="IMS_SHIPMENTS" ToRole="IMS_SHIPMENT_LINE_ITEMS" />
+          <NavigationProperty Name="IMS_SUPPLIER_CUSTOMERS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SUPPLIER03" FromRole="IMS_SHIPMENTS" ToRole="IMS_SUPPLIER_CUSTOMERS" />
+          <NavigationProperty Name="IMS_SHIPMENT_CONTAINERS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT05" FromRole="IMS_SHIPMENTS" ToRole="IMS_SHIPMENT_CONTAINERS" />
+        </EntityType>
+        <Association Name="FK_IMS_PURCHASE_IMS_COST_CEN01">
+          <End Type="AlinIQ_DataModel.IMS_COST_CENTERS" Role="IMS_COST_CENTERS" Multiplicity="1" />
+          <End Type="AlinIQ_DataModel.IMS_PURCHASE_ORDERS" Role="IMS_PURCHASE_ORDERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_COST_CENTERS">
+              <PropertyRef Name="COST_CENTER_ID" />
+            </Principal>
+            <Dependent Role="IMS_PURCHASE_ORDERS">
+              <PropertyRef Name="COST_CENTER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IT_IMS_ITEMS08">
+          <End Type="AlinIQ_DataModel.IMS_ITEMS" Role="IMS_ITEMS" Multiplicity="1" />
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_ITEMS" Role="IMS_SHIPMENT_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_ITEMS">
+              <PropertyRef Name="ITEMID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_ITEMS">
+              <PropertyRef Name="ITEMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PO_LINE__IMS_PRODUCTS02">
+          <End Type="AlinIQ_DataModel.IMS_PRODUCTS" Role="IMS_PRODUCTS" Multiplicity="1" />
+          <End Type="AlinIQ_DataModel.IMS_PO_LINE_ITEMS" Role="IMS_PO_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_PO_LINE_ITEMS">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PO_LINE__IMS_PRODUCTS03">
+          <End Type="AlinIQ_DataModel.IMS_PRODUCTS" Role="IMS_PRODUCTS" Multiplicity="0..1" />
+          <End Type="AlinIQ_DataModel.IMS_PO_LINE_ITEMS" Role="IMS_PO_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_PO_LINE_ITEMS">
+              <PropertyRef Name="SUB_PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PO_LINE__IMS_PURCHASE01">
+          <End Type="AlinIQ_DataModel.IMS_PURCHASE_ORDERS" Role="IMS_PURCHASE_ORDERS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlinIQ_DataModel.IMS_PO_LINE_ITEMS" Role="IMS_PO_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PURCHASE_ORDERS">
+              <PropertyRef Name="PURCHASEORDERID" />
+            </Principal>
+            <Dependent Role="IMS_PO_LINE_ITEMS">
+              <PropertyRef Name="PURCHASEORDERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_PO_LINE_04">
+          <End Type="AlinIQ_DataModel.IMS_PO_LINE_ITEMS" Role="IMS_PO_LINE_ITEMS" Multiplicity="0..1" />
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_LINE_ITEMS" Role="IMS_SHIPMENT_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PO_LINE_ITEMS">
+              <PropertyRef Name="ORDERLINEITEMID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_LINE_ITEMS">
+              <PropertyRef Name="ORDERLINEITEMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PO_SHIPM_IMS_PURCHASE01">
+          <End Type="AlinIQ_DataModel.IMS_PURCHASE_ORDERS" Role="IMS_PURCHASE_ORDERS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlinIQ_DataModel.IMS_PO_SHIPMENTS" Role="IMS_PO_SHIPMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PURCHASE_ORDERS">
+              <PropertyRef Name="PURCHASEORDERID" />
+            </Principal>
+            <Dependent Role="IMS_PO_SHIPMENTS">
+              <PropertyRef Name="PURCHASEORDERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_PO_SHIPM_IMS_SHIPMENT02">
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENTS" Role="IMS_SHIPMENTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlinIQ_DataModel.IMS_PO_SHIPMENTS" Role="IMS_PO_SHIPMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENTS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Principal>
+            <Dependent Role="IMS_PO_SHIPMENTS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_PRODUCTS05">
+          <End Type="AlinIQ_DataModel.IMS_PRODUCTS" Role="IMS_PRODUCTS" Multiplicity="1" />
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_LINE_ITEMS" Role="IMS_SHIPMENT_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_PRODUCTS">
+              <PropertyRef Name="PRODUCTID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_LINE_ITEMS">
+              <PropertyRef Name="PRODUCTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SHIPMENT06">
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_LINE_ITEMS" Role="IMS_SHIPMENT_LINE_ITEMS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_ITEMS" Role="IMS_SHIPMENT_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENT_LINE_ITEMS">
+              <PropertyRef Name="SHIPMENTLINEITEMID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_ITEMS">
+              <PropertyRef Name="SHIPMENTLINEITEMID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SHIPMENT02">
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENTS" Role="IMS_SHIPMENTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_LINE_ITEMS" Role="IMS_SHIPMENT_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENTS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_LINE_ITEMS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="IMS_SUPPLIER_CUSTOMERS">
+          <Key>
+            <PropertyRef Name="CUSTOMERID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="CUSTOMERID" Type="Int32" Nullable="false" />
+          <Property Name="SHIP_TO_CUSTOMER_ID" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SUPPCODE" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+          <Property Name="CITY" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="STATE" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="POSTALCODE" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="COUNTRYCODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS_2" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_PURCHASE_ORDERS" Relationship="AlinIQ_DataModel.FK_IMS_PURCHASE_IMS_SUPPLIER02" FromRole="IMS_SUPPLIER_CUSTOMERS" ToRole="IMS_PURCHASE_ORDERS" />
+          <NavigationProperty Name="IMS_SHIPMENTS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SUPPLIER03" FromRole="IMS_SUPPLIER_CUSTOMERS" ToRole="IMS_SHIPMENTS" />
+          <NavigationProperty Name="SUPPLIER" Relationship="AlinIQ_DataModel.FK_IMS_SUPPLIER_CU_SUPPLIERS01" FromRole="IMS_SUPPLIER_CUSTOMERS" ToRole="SUPPLIER" />
+        </EntityType>
+        <Association Name="FK_IMS_PURCHASE_IMS_SUPPLIER02">
+          <End Type="AlinIQ_DataModel.IMS_SUPPLIER_CUSTOMERS" Role="IMS_SUPPLIER_CUSTOMERS" Multiplicity="1" />
+          <End Type="AlinIQ_DataModel.IMS_PURCHASE_ORDERS" Role="IMS_PURCHASE_ORDERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SUPPLIER_CUSTOMERS">
+              <PropertyRef Name="CUSTOMERID" />
+            </Principal>
+            <Dependent Role="IMS_PURCHASE_ORDERS">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SUPPLIER03">
+          <End Type="AlinIQ_DataModel.IMS_SUPPLIER_CUSTOMERS" Role="IMS_SUPPLIER_CUSTOMERS" Multiplicity="1" />
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENTS" Role="IMS_SHIPMENTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SUPPLIER_CUSTOMERS">
+              <PropertyRef Name="CUSTOMERID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENTS">
+              <PropertyRef Name="CUSTOMERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SUPPLIER_CU_SUPPLIERS01">
+          <End Type="AlinIQ_DataModel.SUPPLIER" Role="SUPPLIER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlinIQ_DataModel.IMS_SUPPLIER_CUSTOMERS" Role="IMS_SUPPLIER_CUSTOMERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUPPLIER">
+              <PropertyRef Name="SUPPCODE" />
+            </Principal>
+            <Dependent Role="IMS_SUPPLIER_CUSTOMERS">
+              <PropertyRef Name="SUPPCODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="IMS_SHIPMENT_CONTAINERS">
+          <Key>
+            <PropertyRef Name="CONTAINERID" />
+          </Key>
+          <Property Name="ORIGREC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ORIGSTS" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="CONTAINERID" Type="Int32" Nullable="false" />
+          <Property Name="CONTAINERTYPE" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="SHIPMENTID" Type="Int32" Nullable="false" />
+          <Property Name="PARENTCONTAINERID" Type="Int32" />
+          <Property Name="TAGREADSTATUS" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="TAGREADTIME" Type="DateTime" Precision="3" />
+          <Property Name="SSCC" Type="String" Nullable="false" MaxLength="52" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IMS_SHIPMENT_LINE_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT03" FromRole="IMS_SHIPMENT_CONTAINERS" ToRole="IMS_SHIPMENT_LINE_ITEMS" />
+          <NavigationProperty Name="IMS_SHIPMENTS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT05" FromRole="IMS_SHIPMENT_CONTAINERS" ToRole="IMS_SHIPMENTS" />
+          <NavigationProperty Name="IMS_SHIPMENT_ITEMS" Relationship="AlinIQ_DataModel.FK_IMS_SHIPMENT_IMS_SHIPMENT07" FromRole="IMS_SHIPMENT_CONTAINERS" ToRole="IMS_SHIPMENT_ITEMS" />
+        </EntityType>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SHIPMENT03">
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_CONTAINERS" Role="IMS_SHIPMENT_CONTAINERS" Multiplicity="0..1" />
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_LINE_ITEMS" Role="IMS_SHIPMENT_LINE_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENT_CONTAINERS">
+              <PropertyRef Name="CONTAINERID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_LINE_ITEMS">
+              <PropertyRef Name="CONTAINERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SHIPMENT05">
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENTS" Role="IMS_SHIPMENTS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_CONTAINERS" Role="IMS_SHIPMENT_CONTAINERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENTS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_CONTAINERS">
+              <PropertyRef Name="SHIPMENTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IMS_SHIPMENT_IMS_SHIPMENT07">
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_CONTAINERS" Role="IMS_SHIPMENT_CONTAINERS" Multiplicity="0..1" />
+          <End Type="AlinIQ_DataModel.IMS_SHIPMENT_ITEMS" Role="IMS_SHIPMENT_ITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMS_SHIPMENT_CONTAINERS">
+              <PropertyRef Name="CONTAINERID" />
+            </Principal>
+            <Dependent Role="IMS_SHIPMENT_ITEMS">
+              <PropertyRef Name="CONTAINERID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AlinIQ_DataModelStoreContainer" CdmEntityContainer="AlinIQ_DataEntities">
+          <EntitySetMapping Name="BUILDINGS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.BUILDING">
+              <MappingFragment StoreEntitySet="BUILDINGS">
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="DEPT" ColumnName="DEPT" />
+                <ScalarProperty Name="BUILDING_NAME" ColumnName="BUILDING_NAME" />
+                <ScalarProperty Name="BUILDING_ID" ColumnName="BUILDING_ID" />
+                <ScalarProperty Name="BUILDING_CODE" ColumnName="BUILDING_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DEPARTMENTS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.DEPARTMENT">
+              <MappingFragment StoreEntitySet="DEPARTMENTS">
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="SHARESDB" ColumnName="SHARESDB" />
+                <ScalarProperty Name="RASCLIENTID" ColumnName="RASCLIENTID" />
+                <ScalarProperty Name="PHONE2" ColumnName="PHONE2" />
+                <ScalarProperty Name="PHONE1" ColumnName="PHONE1" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="MANAGER" ColumnName="MANAGER" />
+                <ScalarProperty Name="KNOWN_AS" ColumnName="KNOWN_AS" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="DEPTCODE" ColumnName="DEPTCODE" />
+                <ScalarProperty Name="DEPT" ColumnName="DEPT" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+                <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+                <ScalarProperty Name="ACCOUNT_NO" ColumnName="ACCOUNT_NO" />
+                <ScalarProperty Name="SHORTDESCRIPTION" ColumnName="SHORTDESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_COST_CENTERS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_COST_CENTERS">
+              <MappingFragment StoreEntitySet="IMS_COST_CENTERS">
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="COST_CENTER_ID" ColumnName="COST_CENTER_ID" />
+                <ScalarProperty Name="COST_CENTER_NAME" ColumnName="COST_CENTER_NAME" />
+                <ScalarProperty Name="COST_CENTER_CODE" ColumnName="COST_CENTER_CODE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="DEPT" ColumnName="DEPT" />
+                <ScalarProperty Name="COST_CENTER_FULLNAME" ColumnName="COST_CENTER_FULLNAME" />
+                <ScalarProperty Name="INTRANSIT" ColumnName="INTRANSIT" />
+                <ScalarProperty Name="SHORTDESCRIPTION" ColumnName="SHORTDESCRIPTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_ITEMS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_ITEMS">
+              <MappingFragment StoreEntitySet="IMS_ITEMS">
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+                <ScalarProperty Name="SGTIN" ColumnName="SGTIN" />
+                <ScalarProperty Name="COSTCENTERID" ColumnName="COSTCENTERID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="STATUSTIME" ColumnName="STATUSTIME" />
+                <ScalarProperty Name="LOCATIONCODE" ColumnName="LOCATIONCODE" />
+                <ScalarProperty Name="LOCATIONTIME" ColumnName="LOCATIONTIME" />
+                <ScalarProperty Name="ITEMLOTID" ColumnName="ITEMLOTID" />
+                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+                <ScalarProperty Name="TAG_GTIN14" ColumnName="TAG_GTIN14" />
+                <ScalarProperty Name="TAG_SN" ColumnName="TAG_SN" />
+                <ScalarProperty Name="CONSUMPTION_UNITS" ColumnName="CONSUMPTION_UNITS" />
+                <ScalarProperty Name="SYSTEM_GENERATED_TAG" ColumnName="SYSTEM_GENERATED_TAG" />
+                <ScalarProperty Name="QCSAMPLE" ColumnName="QCSAMPLE" />
+                <ScalarProperty Name="QCCHECKOUTTIME" ColumnName="QCCHECKOUTTIME" />
+                <ScalarProperty Name="QUARANTINESTATUS" ColumnName="QUARANTINESTATUS" />
+                <ScalarProperty Name="CONSUMEREASON" ColumnName="CONSUMEREASON" />
+                <ScalarProperty Name="BARCODE_FLAG" ColumnName="BARCODE_FLAG" />
+                <ScalarProperty Name="RECEIPTTIME" ColumnName="RECEIPTTIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_LOTS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_LOTS">
+              <MappingFragment StoreEntitySet="IMS_LOTS">
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="LOTID" ColumnName="LOTID" />
+                <ScalarProperty Name="LOTNUMBER" ColumnName="LOTNUMBER" />
+                <ScalarProperty Name="LOTEXPIRATION" ColumnName="LOTEXPIRATION" />
+                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_PHYSICAL_INVENTORY">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PHYSICAL_INVENTORY">
+              <MappingFragment StoreEntitySet="IMS_PHYSICAL_INVENTORY">
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="PHYSICALINVENTORYID" ColumnName="PHYSICALINVENTORYID" />
+                <ScalarProperty Name="START_DATE" ColumnName="START_DATE" />
+                <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="USRNAM" ColumnName="USRNAM" />
+                <ScalarProperty Name="LOCATION_NAME" ColumnName="LOCATION_NAME" />
+                <ScalarProperty Name="PHYSICALINVENTORYREVIEWID" ColumnName="PHYSICALINVENTORYREVIEWID" />
+                <ScalarProperty Name="LOCATIONCODE" ColumnName="LOCATIONCODE" />
+                <ScalarProperty Name="LOCATION_SHORTNAME" ColumnName="LOCATION_SHORTNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_PHYSICAL_INVENTORY_REV">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PHYSICAL_INVENTORY_REV">
+              <MappingFragment StoreEntitySet="IMS_PHYSICAL_INVENTORY_REV">
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="PHYSICALINVENTORYREVIEWID" ColumnName="PHYSICALINVENTORYREVIEWID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="START_TIME" ColumnName="START_TIME" />
+                <ScalarProperty Name="END_TIME" ColumnName="END_TIME" />
+                <ScalarProperty Name="USRNAM" ColumnName="USRNAM" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TEXT" ColumnName="TEXT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_PHYSICAL_ITEMS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PHYSICAL_ITEMS">
+              <MappingFragment StoreEntitySet="IMS_PHYSICAL_ITEMS">
+                <ScalarProperty Name="TEST_CODE" ColumnName="TEST_CODE" />
+                <ScalarProperty Name="DISCREPANCY_CODE" ColumnName="DISCREPANCY_CODE" />
+                <ScalarProperty Name="DISPOSITION_CODE" ColumnName="DISPOSITION_CODE" />
+                <ScalarProperty Name="OVERRIDE_CODE" ColumnName="OVERRIDE_CODE" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="SGTIN" ColumnName="SGTIN" />
+                <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
+                <ScalarProperty Name="SUPPLIER_NAME" ColumnName="SUPPLIER_NAME" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="STATUS_TIME" ColumnName="STATUS_TIME" />
+                <ScalarProperty Name="LOTNUMBER" ColumnName="LOTNUMBER" />
+                <ScalarProperty Name="PHYSICALINVENTORYID" ColumnName="PHYSICALINVENTORYID" />
+                <ScalarProperty Name="LOTEXPIRATION" ColumnName="LOTEXPIRATION" />
+                <ScalarProperty Name="PHYSICALITEMID" ColumnName="PHYSICALITEMID" />
+                <ScalarProperty Name="DISPOSITION_STATUS" ColumnName="DISPOSITION_STATUS" />
+                <ScalarProperty Name="DISPOSITION_STATUS_TIME" ColumnName="DISPOSITION_STATUS_TIME" />
+                <ScalarProperty Name="DISPOSITION_USRNAM" ColumnName="DISPOSITION_USRNAM" />
+                <ScalarProperty Name="TAG_GTIN14" ColumnName="TAG_GTIN14" />
+                <ScalarProperty Name="TAG_SN" ColumnName="TAG_SN" />
+                <ScalarProperty Name="DISPOSITION_PARM" ColumnName="DISPOSITION_PARM" />
+                <ScalarProperty Name="OVERRIDDEN" ColumnName="OVERRIDDEN" />
+                <ScalarProperty Name="NEWLOCATIONCODE" ColumnName="NEWLOCATIONCODE" />
+                <ScalarProperty Name="DISCREPANCYNEWLOCATION" ColumnName="DISCREPANCYNEWLOCATION" />
+                <ScalarProperty Name="PROCESSED" ColumnName="PROCESSED" />
+                <ScalarProperty Name="DISCREPANCY" ColumnName="DISCREPANCY" />
+                <ScalarProperty Name="SCAN_ITEM_STATUS" ColumnName="SCAN_ITEM_STATUS" />
+                <ScalarProperty Name="PREVIOUS_LOCATION" ColumnName="PREVIOUS_LOCATION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_PHYSICALITEM_DIS_LOG">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PHYSICALITEM_DIS_LOG">
+              <MappingFragment StoreEntitySet="IMS_PHYSICALITEM_DIS_LOG">
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="PHYSICALINVENTORYID" ColumnName="PHYSICALINVENTORYID" />
+                <ScalarProperty Name="SGTIN" ColumnName="SGTIN" />
+                <ScalarProperty Name="PHYSICALITEMID" ColumnName="PHYSICALITEMID" />
+                <ScalarProperty Name="PROCESSED_TIME" ColumnName="PROCESSED_TIME" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_PRODUCTS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PRODUCTS">
+              <MappingFragment StoreEntitySet="IMS_PRODUCTS">
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+                <ScalarProperty Name="LISTNUMBER" ColumnName="LISTNUMBER" />
+                <ScalarProperty Name="GTIN" ColumnName="GTIN" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+                <ScalarProperty Name="UNIT" ColumnName="UNIT" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="STORAGE_CONDITION" ColumnName="STORAGE_CONDITION" />
+                <ScalarProperty Name="HAS_LOTS" ColumnName="HAS_LOTS" />
+                <ScalarProperty Name="HAS_EXPIRY_DATE" ColumnName="HAS_EXPIRY_DATE" />
+                <ScalarProperty Name="IS_RFID_TAGGED" ColumnName="IS_RFID_TAGGED" />
+                <ScalarProperty Name="IS_ORDERABLE" ColumnName="IS_ORDERABLE" />
+                <ScalarProperty Name="IS_VIRTUAL" ColumnName="IS_VIRTUAL" />
+                <ScalarProperty Name="SUPPCODE" ColumnName="SUPPCODE" />
+                <ScalarProperty Name="OLD_LISTNUMBER" ColumnName="OLD_LISTNUMBER" />
+                <ScalarProperty Name="NEW_LISTNUMBER" ColumnName="NEW_LISTNUMBER" />
+                <ScalarProperty Name="COMPANY_PREFIX" ColumnName="COMPANY_PREFIX" />
+                <ScalarProperty Name="IS_EDITABLE" ColumnName="IS_EDITABLE" />
+                <ScalarProperty Name="CUSTOMERMATERIALID" ColumnName="CUSTOMERMATERIALID" />
+                <ScalarProperty Name="CUSTOMERMATERIALGROUP" ColumnName="CUSTOMERMATERIALGROUP" />
+                <ScalarProperty Name="SHORT_NAME" ColumnName="SHORT_NAME" />
+                <ScalarProperty Name="IS_NON_CANON" ColumnName="IS_NON_CANON" />
+                <ScalarProperty Name="ERP_KEY_DATA" ColumnName="ERP_KEY_DATA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_PURPOSES">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PURPOSES">
+              <MappingFragment StoreEntitySet="IMS_PURPOSES">
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="USAGE_PURPOSE_CODE" ColumnName="USAGE_PURPOSE_CODE" />
+                <ScalarProperty Name="USAGE_PURPOSE_TEXT" ColumnName="USAGE_PURPOSE_TEXT" />
+                <ScalarProperty Name="SORTER" ColumnName="SORTER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOCATIONS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.LOCATION">
+              <MappingFragment StoreEntitySet="LOCATIONS">
+                <ScalarProperty Name="SUBLOCATIONINFO_ID" ColumnName="SUBLOCATIONINFO_ID" />
+                <ScalarProperty Name="SERVGRP" ColumnName="SERVGRP" />
+                <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
+                <ScalarProperty Name="PARENT_LOCATION_CODE" ColumnName="PARENT_LOCATION_CODE" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="LONGNAME" ColumnName="LONGNAME" />
+                <ScalarProperty Name="LONGCODE" ColumnName="LONGCODE" />
+                <ScalarProperty Name="LOCATIONCODE" ColumnName="LOCATIONCODE" />
+                <ScalarProperty Name="LOCATION_TYPE_ID" ColumnName="LOCATION_TYPE_ID" />
+                <ScalarProperty Name="LOCATION_NAME" ColumnName="LOCATION_NAME" />
+                <ScalarProperty Name="LOCATION1" ColumnName="LOCATION" />
+                <ScalarProperty Name="IS_STORABLE" ColumnName="IS_STORABLE" />
+                <ScalarProperty Name="IS_GXP" ColumnName="IS_GXP" />
+                <ScalarProperty Name="DISPLAY_LOCATIONCODE" ColumnName="DISPLAY_LOCATIONCODE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="DEPT" ColumnName="DEPT" />
+                <ScalarProperty Name="CONDITION" ColumnName="CONDITION" />
+                <ScalarProperty Name="TO_BE_COUNTED" ColumnName="TO_BE_COUNTED" />
+                <ScalarProperty Name="MIN_INTERVAL_COUNT" ColumnName="MIN_INTERVAL_COUNT" />
+                <ScalarProperty Name="LAST_COUNT_DATE" ColumnName="LAST_COUNT_DATE" />
+                <ScalarProperty Name="MAX_INTERVAL_COUNT" ColumnName="MAX_INTERVAL_COUNT" />
+                <ScalarProperty Name="COUNT_INTERVAL_UNIT" ColumnName="COUNT_INTERVAL_UNIT" />
+                <ScalarProperty Name="SEALED" ColumnName="SEALED" />
+                <ScalarProperty Name="CAPACITY" ColumnName="CAPACITY" />
+                <ScalarProperty Name="HOLDING_MATERIAL" ColumnName="HOLDING_MATERIAL" />
+                <ScalarProperty Name="SORTER" ColumnName="SORTER" />
+                <ScalarProperty Name="HAS_RFID_COVERAGE" ColumnName="HAS_RFID_COVERAGE" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="INTRANSIT" ColumnName="INTRANSIT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="METADATA_LOOKUP_VALUES">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.METADATA_LOOKUP_VALUES">
+              <MappingFragment StoreEntitySet="METADATA_LOOKUP_VALUES">
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="TEXT" ColumnName="TEXT" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="LOOKUP_NAME" ColumnName="LOOKUP_NAME" />
+                <ScalarProperty Name="SORTER" ColumnName="SORTER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="METADATA_LOOKUPS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.METADATA_LOOKUPS">
+              <MappingFragment StoreEntitySet="METADATA_LOOKUPS">
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="DATA_SOURCE" ColumnName="DATA_SOURCE" />
+                <ScalarProperty Name="USAGE" ColumnName="USAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROOMS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.ROOM">
+              <MappingFragment StoreEntitySet="ROOMS">
+                <ScalarProperty Name="ROOM_NAME" ColumnName="ROOM_NAME" />
+                <ScalarProperty Name="ROOM_ID" ColumnName="ROOM_ID" />
+                <ScalarProperty Name="ROOM_CODE" ColumnName="ROOM_CODE" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="BUILDING_ID" ColumnName="BUILDING_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUPPLIERS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.SUPPLIER">
+              <MappingFragment StoreEntitySet="SUPPLIERS">
+                <ScalarProperty Name="SUPZIP" ColumnName="SUPZIP" />
+                <ScalarProperty Name="SUPPST" ColumnName="SUPPST" />
+                <ScalarProperty Name="SUPPNAM" ColumnName="SUPPNAM" />
+                <ScalarProperty Name="SUPPCODE" ColumnName="SUPPCODE" />
+                <ScalarProperty Name="SUPPCITY" ColumnName="SUPPCITY" />
+                <ScalarProperty Name="SUPPADD_A" ColumnName="SUPPADD_A" />
+                <ScalarProperty Name="SUPPADD" ColumnName="SUPPADD" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="JJCODE" ColumnName="JJCODE" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="CURRENCYTYPE" ColumnName="CURRENCYTYPE" />
+                <ScalarProperty Name="SUPPID" ColumnName="SUPPID" />
+                <ScalarProperty Name="COUNTRYCODE" ColumnName="COUNTRYCODE" />
+                <ScalarProperty Name="IS_EDITABLE" ColumnName="IS_EDITABLE" />
+                <ScalarProperty Name="BLOCKOUTBOUND" ColumnName="BLOCKOUTBOUND" />
+                <ScalarProperty Name="QC_FAIL_RESOLUTION" ColumnName="QC_FAIL_RESOLUTION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LIMSCOUNTERS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.LIMSCOUNTER">
+              <MappingFragment StoreEntitySet="LIMSCOUNTERS">
+                <ScalarProperty Name="FLDNAME" ColumnName="FLDNAME" />
+                <ScalarProperty Name="LIMSCOUNTER1" ColumnName="LIMSCOUNTER" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="PREFIX" ColumnName="PREFIX" />
+                <ScalarProperty Name="TABLNAME" ColumnName="TABLNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_TEST_RL">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.X_TEST_RL">
+              <MappingFragment StoreEntitySet="X_TEST_RL">
+                <ScalarProperty Name="LARGE" ColumnName="LARGE" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_COST_CENTER_PRODUCTS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_COST_CENTER_PRODUCTS">
+              <MappingFragment StoreEntitySet="IMS_COST_CENTER_PRODUCTS">
+                <ScalarProperty Name="QUATANTINELOCATIONCODE" ColumnName="QUATANTINELOCATIONCODE" />
+                <ScalarProperty Name="QUARANTINEMETHOD" ColumnName="QUARANTINEMETHOD" />
+                <ScalarProperty Name="CONSUMPTIONUNITS" ColumnName="CONSUMPTIONUNITS" />
+                <ScalarProperty Name="ALT_ORDERPRODUCTID" ColumnName="ALT_ORDERPRODUCTID" />
+                <ScalarProperty Name="MAKE_ORDER_SUGGESTIONS" ColumnName="MAKE_ORDER_SUGGESTIONS" />
+                <ScalarProperty Name="IS_STOCK_CONTROLLED" ColumnName="IS_STOCK_CONTROLLED" />
+                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+                <ScalarProperty Name="COSTCENTERID" ColumnName="COSTCENTERID" />
+                <ScalarProperty Name="MAXITEMLEVEL" ColumnName="MAXITEMLEVEL" />
+                <ScalarProperty Name="MINITEMLEVEL" ColumnName="MINITEMLEVEL" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_PO_LINE_ITEMS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PO_LINE_ITEMS">
+              <MappingFragment StoreEntitySet="IMS_PO_LINE_ITEMS">
+                <ScalarProperty Name="ERP_PO_NUM" ColumnName="ERP_PO_NUM" />
+                <ScalarProperty Name="ERP_PO_LINE_NUMBER" ColumnName="ERP_PO_LINE_NUMBER" />
+                <ScalarProperty Name="QUANTITY_RECEIVED" ColumnName="QUANTITY_RECEIVED" />
+                <ScalarProperty Name="QUANTITY_EXPECTED" ColumnName="QUANTITY_EXPECTED" />
+                <ScalarProperty Name="QUANTITY_PENDING" ColumnName="QUANTITY_PENDING" />
+                <ScalarProperty Name="COMMENTS" ColumnName="COMMENTS" />
+                <ScalarProperty Name="SUB_COMMENT" ColumnName="SUB_COMMENT" />
+                <ScalarProperty Name="SUB_PRODUCTID" ColumnName="SUB_PRODUCTID" />
+                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+                <ScalarProperty Name="PURCHASEORDERID" ColumnName="PURCHASEORDERID" />
+                <ScalarProperty Name="STATUS_TIME" ColumnName="STATUS_TIME" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="UNIT_PRICE" ColumnName="UNIT_PRICE" />
+                <ScalarProperty Name="QUANTITY_SUBSTITUTED" ColumnName="QUANTITY_SUBSTITUTED" />
+                <ScalarProperty Name="QUANTITY_DELETED" ColumnName="QUANTITY_DELETED" />
+                <ScalarProperty Name="QUANTITY_BACKORDERED" ColumnName="QUANTITY_BACKORDERED" />
+                <ScalarProperty Name="QUANTITY_ACCEPTED" ColumnName="QUANTITY_ACCEPTED" />
+                <ScalarProperty Name="QUANTITY_ORDERED" ColumnName="QUANTITY_ORDERED" />
+                <ScalarProperty Name="LINE_ITEM_NUMBER" ColumnName="LINE_ITEM_NUMBER" />
+                <ScalarProperty Name="ORDERLINEITEMID" ColumnName="ORDERLINEITEMID" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_PO_SHIPMENTS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PO_SHIPMENTS">
+              <MappingFragment StoreEntitySet="IMS_PO_SHIPMENTS">
+                <ScalarProperty Name="SHIPMENTID" ColumnName="SHIPMENTID" />
+                <ScalarProperty Name="PURCHASEORDERID" ColumnName="PURCHASEORDERID" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_PURCHASE_ORDERS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_PURCHASE_ORDERS">
+              <MappingFragment StoreEntitySet="IMS_PURCHASE_ORDERS">
+                <ScalarProperty Name="ERP_KEY_DATA" ColumnName="ERP_KEY_DATA" />
+                <ScalarProperty Name="ERP_PO_NUMBER" ColumnName="ERP_PO_NUMBER" />
+                <ScalarProperty Name="ACKSTATUS_TIME" ColumnName="ACKSTATUS_TIME" />
+                <ScalarProperty Name="ACKSTATUS" ColumnName="ACKSTATUS" />
+                <ScalarProperty Name="TXSTATUS_TIME" ColumnName="TXSTATUS_TIME" />
+                <ScalarProperty Name="TXSTATUS" ColumnName="TXSTATUS" />
+                <ScalarProperty Name="REQ_SHIP_DATE" ColumnName="REQ_SHIP_DATE" />
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="COST_CENTER_ID" ColumnName="COST_CENTER_ID" />
+                <ScalarProperty Name="STATUS_TIME" ColumnName="STATUS_TIME" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="PROCESS_DATE" ColumnName="PROCESS_DATE" />
+                <ScalarProperty Name="CONFIRM_DATE" ColumnName="CONFIRM_DATE" />
+                <ScalarProperty Name="APPROVAL_DATE" ColumnName="APPROVAL_DATE" />
+                <ScalarProperty Name="PO_SUPPLIER_REF" ColumnName="PO_SUPPLIER_REF" />
+                <ScalarProperty Name="PO_CUSTOMER_REF" ColumnName="PO_CUSTOMER_REF" />
+                <ScalarProperty Name="PO_NUMBER" ColumnName="PO_NUMBER" />
+                <ScalarProperty Name="PURCHASEORDERID" ColumnName="PURCHASEORDERID" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_SHIPMENT_ITEMS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_SHIPMENT_ITEMS">
+              <MappingFragment StoreEntitySet="IMS_SHIPMENT_ITEMS">
+                <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+                <ScalarProperty Name="TAGREADTIME" ColumnName="TAGREADTIME" />
+                <ScalarProperty Name="TAGREADSTATUS" ColumnName="TAGREADSTATUS" />
+                <ScalarProperty Name="SHIPMENTLINEITEMID" ColumnName="SHIPMENTLINEITEMID" />
+                <ScalarProperty Name="CONTAINERID" ColumnName="CONTAINERID" />
+                <ScalarProperty Name="SHIPMENTITEMID" ColumnName="SHIPMENTITEMID" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_SHIPMENT_LINE_ITEMS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_SHIPMENT_LINE_ITEMS">
+              <MappingFragment StoreEntitySet="IMS_SHIPMENT_LINE_ITEMS">
+                <ScalarProperty Name="PO_CUSTOMER_REF" ColumnName="PO_CUSTOMER_REF" />
+                <ScalarProperty Name="LINE_ITEM_NUMBER" ColumnName="LINE_ITEM_NUMBER" />
+                <ScalarProperty Name="PO_NUMBER" ColumnName="PO_NUMBER" />
+                <ScalarProperty Name="PRODUCTID" ColumnName="PRODUCTID" />
+                <ScalarProperty Name="LOTEXPIRATION" ColumnName="LOTEXPIRATION" />
+                <ScalarProperty Name="LOTNUMBER" ColumnName="LOTNUMBER" />
+                <ScalarProperty Name="QUANTITYSHIPPED" ColumnName="QUANTITYSHIPPED" />
+                <ScalarProperty Name="CONTAINERID" ColumnName="CONTAINERID" />
+                <ScalarProperty Name="ORDERLINEITEMID" ColumnName="ORDERLINEITEMID" />
+                <ScalarProperty Name="SHIPMENTID" ColumnName="SHIPMENTID" />
+                <ScalarProperty Name="SHIPMENTLINEITEMID" ColumnName="SHIPMENTLINEITEMID" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_SHIPMENTS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_SHIPMENTS">
+              <MappingFragment StoreEntitySet="IMS_SHIPMENTS">
+                <ScalarProperty Name="HAS_SYSTEM_GENERATED_TAGS" ColumnName="HAS_SYSTEM_GENERATED_TAGS" />
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="STATUSTIME" ColumnName="STATUSTIME" />
+                <ScalarProperty Name="SHIPMENTDATE" ColumnName="SHIPMENTDATE" />
+                <ScalarProperty Name="RECEIVESTATUS" ColumnName="RECEIVESTATUS" />
+                <ScalarProperty Name="ASNCREATIONDATE" ColumnName="ASNCREATIONDATE" />
+                <ScalarProperty Name="ASNNUMBER" ColumnName="ASNNUMBER" />
+                <ScalarProperty Name="SHIPMENTID" ColumnName="SHIPMENTID" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_SUPPLIER_CUSTOMERS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_SUPPLIER_CUSTOMERS">
+              <MappingFragment StoreEntitySet="IMS_SUPPLIER_CUSTOMERS">
+                <ScalarProperty Name="ADDRESS_2" ColumnName="ADDRESS_2" />
+                <ScalarProperty Name="COUNTRYCODE" ColumnName="COUNTRYCODE" />
+                <ScalarProperty Name="POSTALCODE" ColumnName="POSTALCODE" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="SUPPCODE" ColumnName="SUPPCODE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SHIP_TO_CUSTOMER_ID" ColumnName="SHIP_TO_CUSTOMER_ID" />
+                <ScalarProperty Name="CUSTOMERID" ColumnName="CUSTOMERID" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMS_SHIPMENT_CONTAINERS">
+            <EntityTypeMapping TypeName="AlinIQ_DataModel.IMS_SHIPMENT_CONTAINERS">
+              <MappingFragment StoreEntitySet="IMS_SHIPMENT_CONTAINERS">
+                <ScalarProperty Name="SSCC" ColumnName="SSCC" />
+                <ScalarProperty Name="TAGREADTIME" ColumnName="TAGREADTIME" />
+                <ScalarProperty Name="TAGREADSTATUS" ColumnName="TAGREADSTATUS" />
+                <ScalarProperty Name="PARENTCONTAINERID" ColumnName="PARENTCONTAINERID" />
+                <ScalarProperty Name="SHIPMENTID" ColumnName="SHIPMENTID" />
+                <ScalarProperty Name="CONTAINERTYPE" ColumnName="CONTAINERTYPE" />
+                <ScalarProperty Name="CONTAINERID" ColumnName="CONTAINERID" />
+                <ScalarProperty Name="ORIGSTS" ColumnName="ORIGSTS" />
+                <ScalarProperty Name="ORIGREC" ColumnName="ORIGREC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

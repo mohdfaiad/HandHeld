@@ -1,0 +1,7 @@
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Models\bin\Release\PI_Models.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Models\bin\Release\PI_Models.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Models\bin\Release\Newtonsoft.Json.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Models\bin\Release\Newtonsoft.Json.xml
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Models\obj\Release\PI_Models.csprojResolveAssemblyReference.cache
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Models\obj\Release\PI_Models.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Models\obj\Release\PI_Models.pdb

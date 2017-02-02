@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1339C0E5-108B-469C-B749-D4D9503F913A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PI_Domain</RootNamespace>
+    <AssemblyName>PI_Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUILDING.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DEPARTMENT.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_COST_CENTERS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_COST_CENTER_PRODUCTS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_ITEMS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_LOTS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_PHYSICALITEM_DIS_LOG.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_PHYSICAL_INVENTORY.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_PHYSICAL_INVENTORY_REV.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_PHYSICAL_ITEMS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_PO_LINE_ITEMS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_PO_SHIPMENTS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_PRODUCTS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_PURCHASE_ORDERS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_PURPOSES.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_SHIPMENTS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_SHIPMENT_CONTAINERS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_SHIPMENT_ITEMS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_SHIPMENT_LINE_ITEMS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMS_SUPPLIER_CUSTOMERS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LIMSCOUNTER.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOCATION.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="METADATA_LOOKUPS.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="METADATA_LOOKUP_VALUES.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PI_Entities_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PI_Entities_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PI_Entities_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PI_Entities_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PI_Entities_Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ROOM.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUPPLIER.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="X_TEST_RL.cs">
+      <DependentUpon>PI_Entities_Model.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <EntityDeploy Include="PI_Entities_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PI_Entities_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PI_Entities_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PI_Entities_Model.edmx</DependentUpon>
+      <LastGenOutput>PI_Entities_Model.Context.cs</LastGenOutput>
+    </None>
+    <None Include="PI_Entities_Model.edmx.diagram">
+      <DependentUpon>PI_Entities_Model.edmx</DependentUpon>
+    </None>
+    <None Include="PI_Entities_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PI_Entities_Model.edmx</DependentUpon>
+      <LastGenOutput>PI_Entities_Model.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,149 @@
+﻿@model PI_Models.Handheld
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Handheld</title>
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <link href="~/Style/style.css" rel="stylesheet" />
+
+    <script src="~/Scripts/Custom/UpdateAfterLocationChange.js"></script>
+    <script src="~/Scripts/Custom/HideItems.js"></script>
+    <script src="~/Scripts/Custom/SelectFound.js"></script>
+    <script src="~/Scripts/Custom/LocationFound.js"></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div><h2>Handheld</h2></div>
+            @Html.Raw(Model.htmlResults)
+        </div>
+
+
+
+        <form method="post">
+
+            <div>
+                <div><input class="btn" type="submit" value="Submit" name="CreatePI" /></div>
+                <div><input class="btn" type="button" value="Select Found" id="SelectFound" /></div>
+            </div>
+
+            @{
+                int cl = 0;
+                int pi = 0;
+            }
+
+            @foreach (var l in Model.locations)
+            {
+                var location = l.locationName + " (" + l.locationCode + ")" + " Site: " + l.Site;
+
+                <div>
+                    <span class="heading" data-idx="@cl">@location:</span>  @Html.CheckBoxFor(x => x.locations[cl].Select)
+                    <div><span>Only Move Items:  @Html.CheckBoxFor(x => x.locations[cl].MoveItemsOnly, new { @class = "moveonly" }) </span></div>
+                    <div><input class="btnLoc" type="button" value="@l.locationName Find Stock" id="Find_Location_@cl" data-row="@cl" data_match="Stock" /></div>
+                    <div><input class="btnLoc" type="button" value="@l.locationName Find Pending" id="Find_Pending_@cl" data-row="@cl" data_match="Pending" /></div>
+                    <div><input class="btnLoc" type="button" value="@l.locationName Find Used" id="Find_Used_@cl" data-row="@cl" data_match="Used" /></div>
+                    <div><input class="btnLoc" type="button" value="@l.locationName Find Dislocated" id="Find_Dislocated_@cl" data-row="@cl" data_match="Dislocated" /></div>
+                    <div><input class="btnLoc" type="button" value="@l.locationName Find Shipped" id="Find_Shipped_@cl" data-row="@cl" data_match="Shipped" /></div>
+                </div>
+
+
+                @Html.HiddenFor(m => m.locations[cl].locationCode)
+                @Html.HiddenFor(m => m.locations[cl].Skip)
+
+
+                <div id="content_@cl">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>SGTIN</th>
+                            <th>Found</th>
+                            <th>Status</th>
+                            <th>Status Time</th>
+                            <th>Location</th>
+                        </tr>
+
+                        @for (var i = 0; i < l.items.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.HiddenFor(m => m.locations[cl].items[i].itemID)
+                                 
+                                </td>
+
+
+                                @if (@Model.locations[cl].items[i].unknownItem)
+                                {
+                                    <td class="bold">@Html.EditorFor(m => m.locations[cl].items[i].sgtin)</td>
+                                }
+                                else
+                                {
+                                    @Html.HiddenFor(m => m.locations[cl].items[i].sgtin)
+                                    <td class="bold">@Html.DisplayFor(m => m.locations[cl].items[i].sgtin)</td>
+                                }
+
+
+
+
+                                <td>@Html.CheckBoxFor(m => m.locations[cl].items[i].found, new { @class = "found", data_status = Model.locations[cl].items[i].status, data_stock = "0" })</td>
+                                <td>@Html.DisplayFor(m => m.locations[cl].items[i].status)
+                                
+                                @*@if (@Model.locations[cl].items[i].status == "Shipped")
+                                {*@
+                                    <b>@Model.locations[cl].items[i].costcentername</b>
+                                @*}*@
+                                
+                                </td>
+                                <td>@Html.DisplayFor(m => m.locations[cl].items[i].statusTime)</td>
+                                <td>@Html.DropDownListFor(m => m.locations[cl].items[i].changeLocation, Model.locationsList, "Select to Change Location", new { @class = "newlocation" })</td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+                        cl++;
+            }
+
+
+
+            @*<div class="products">
+                    @{
+                        pi = 0;
+                    }
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>GTIN</th>
+                            <th>Name</th>
+                            <th>Qty</th>
+                            <th>Location</th>
+                        </tr>
+
+                        @foreach (var l in Model.products)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.HiddenFor(m => m.products[pi].ProductID)
+                                    @Html.HiddenFor(m => m.products[pi].GTIN)
+                                </td>
+                                <td class="bold">@Html.DisplayFor(m => m.products[pi].GTIN)</td>
+                                <td>@Html.DisplayFor(m => m.products[pi].Name)</td>
+                                <td>@Html.TextBoxFor(m => m.products[pi].qty)</td>
+                                <td>@Html.TextBoxFor(m => m.products[pi].location)</td>
+                            </tr>
+
+                            pi++;
+                        }
+                    </table>
+                </div>*@
+
+        </form>
+    </div>
+</body>
+</html>

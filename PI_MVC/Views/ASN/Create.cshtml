@@ -1,0 +1,128 @@
+﻿@model PI_Models.AdvancedShipingNotice
+
+
+
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Advanced Shipping Notice</title>
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <link href="~/Scripts/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Style/style.css" rel="stylesheet" />
+    <script src="~/Scripts/Custom/DataTimePicker.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div><h2>Create Advanced Shipping Notice from PO</h2></div>
+        </div>
+        <form method="post">
+
+            <div>
+                <div><input class="btn" type="submit" value="Submit" name="CreateASN" /></div>
+                <div>Direct: @Html.CheckBoxFor(m => Model.DirectInsert)</div>
+                <div>Xml File Output: @Html.CheckBoxFor(m => Model.XmlFileOutput)</div>
+            </div>
+            <div>@Html.ValidationSummary(true)</div>
+
+            @{
+                int cl = 0;
+            }
+
+            @foreach (var l in Model.PurchaseOrders)
+            {
+
+                <div class="box">
+
+                    <div>
+                        @Html.HiddenFor(m => m.PurchaseOrders[cl].PurchaseOrderID)
+                        @Html.HiddenFor(m => m.PurchaseOrders[cl].CustomerID)
+                        @Html.HiddenFor(m => m.PurchaseOrders[cl].PONumber)
+
+                        <div>Select: @Html.CheckBoxFor(m => m.PurchaseOrders[cl].Select)</div>
+                        <div>Supplier: @Html.DropDownListFor(m => m.PurchaseOrders[cl].asn.ShipToCustomerID, Model.ShipToCustomers, "Select Ship To Customer", null)</div>
+                        <div>ASN Number: @Html.EditorFor(m => m.PurchaseOrders[cl].asn.ASNNumber)</div>
+                        <div>Ship Date: @Html.EditorFor(m => m.PurchaseOrders[cl].asn.ShipmentDate)</div>
+                        <div>PO Number: @Html.DisplayFor(m => m.PurchaseOrders[cl].PONumber)</div>
+                        <div>Status: @Html.DisplayFor(m => m.PurchaseOrders[cl].Status)</div>
+                        <div>Cust Ref: @Html.DisplayFor(m => m.PurchaseOrders[cl].CostCenterName)</div>
+                        <div>Site: @Html.DisplayFor(m => m.PurchaseOrders[cl].Site) </div>
+                    </div>
+
+                    <div id="content_@cl">
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>Line Number</th>
+                                <th>Supplier ID</th>
+                                <th>Product Name</th>
+                                <th>Select</th>
+                                <th>Quantity Accepted</th>
+                                <th>Quantity Ordered</th>
+                                <th>Status</th>
+                                <th>ASN Quantity</th>
+                                <th>Lot</th>
+                                <th>Lot Exp</th>
+                            </tr>
+
+                            @for (var i = 0; i < l.LineItems.Count; i++)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.HiddenFor(m => m.PurchaseOrders[cl].LineItems[i].OrderLineItemID)
+                                        @Html.HiddenFor(m => m.PurchaseOrders[cl].LineItems[i].GTIN)
+                                        @Html.HiddenFor(m => m.PurchaseOrders[cl].LineItems[i].SupplierID)
+                                        @Html.HiddenFor(m => m.PurchaseOrders[cl].LineItems[i].QuantityOrdered)
+               
+                                    </td>
+                                    <td>@Html.DisplayFor(m => m.PurchaseOrders[cl].LineItems[i].LineItemNumber)  </td>
+                                    <td>@Html.DisplayFor(m => m.PurchaseOrders[cl].LineItems[i].SupplierID)  </td>
+                                    <td>@Html.DisplayFor(m => m.PurchaseOrders[cl].LineItems[i].ProductName)</td>
+                                    <td>@Html.CheckBoxFor(m => m.PurchaseOrders[cl].LineItems[i].Select, new { @class = "XYZ", data_max = Model.PurchaseOrders[cl].LineItems[i].QuantityAccepted })</td>
+                                    <td>@Html.DisplayFor(m => m.PurchaseOrders[cl].LineItems[i].QuantityAccepted)</td>
+                                    <td>@Html.DisplayFor(m => m.PurchaseOrders[cl].LineItems[i].QuantityOrdered)</td>
+                                    <td>@Html.DisplayFor(m => m.PurchaseOrders[cl].LineItems[i].Status)</td>
+                                    <td>@Html.EditorFor(m => m.PurchaseOrders[cl].LineItems[i].ASNQty)</td>
+                                    <td>@Html.EditorFor(m => m.PurchaseOrders[cl].LineItems[i].LotNumber)</td>
+                                    <td> @Html.EditorFor(m => m.PurchaseOrders[cl].LineItems[i].LotExpiration)</td>
+
+                                    @*<td>@Html.DropDownListFor(m => m.PurchaseOrders[cl].LineItems[i].changeLocation, Model.locationsList, "Select to Change Location", new { @class = "newlocation" })</td>*@
+                                </tr>
+                            }
+                        </table>
+                    </div>
+
+                </div>
+
+
+                            //}
+
+                            cl++;
+
+
+            }
+
+
+
+
+        </form>
+    </div>
+
+
+</body>
+</html>

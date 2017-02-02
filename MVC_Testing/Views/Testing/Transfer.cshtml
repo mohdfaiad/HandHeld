@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        Transfer money
+        <form action="Transfer" method=post>
+            Enter Amount
+            <input type="text" name="amount" value="" />
+
+            Enter Account number
+
+
+            @Html.AntiForgeryToken()
+            <input type=submit value="transfer money" />
+        </form>
+    </div>
+</body>
+</html>

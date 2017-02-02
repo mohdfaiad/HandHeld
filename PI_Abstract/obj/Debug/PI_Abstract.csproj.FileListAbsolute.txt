@@ -1,0 +1,5 @@
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Abstract\bin\Debug\PI_Abstract.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Abstract\bin\Debug\PI_Abstract.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Abstract\obj\Debug\PI_Abstract.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Abstract\obj\Debug\PI_Abstract.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Abstract\obj\Debug\PI_Abstract.csprojResolveAssemblyReference.cache

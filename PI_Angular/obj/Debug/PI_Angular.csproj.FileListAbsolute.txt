@@ -1,0 +1,6 @@
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Angular\bin\PI_Angular.dll.config
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Angular\bin\PI_Angular.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Angular\bin\PI_Angular.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Angular\obj\Debug\PI_Angular.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Angular\obj\Debug\PI_Angular.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_Angular\obj\Debug\PI_Angular.csprojResolveAssemblyReference.cache

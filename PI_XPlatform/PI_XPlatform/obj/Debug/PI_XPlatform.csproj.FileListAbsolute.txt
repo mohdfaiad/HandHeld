@@ -1,0 +1,8 @@
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_XPlatform\PI_XPlatform\bin\Debug\PI_XPlatform.dll.config
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_XPlatform\PI_XPlatform\bin\Debug\PI_XPlatform.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_XPlatform\PI_XPlatform\bin\Debug\PI_XPlatform.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_XPlatform\PI_XPlatform\obj\Debug\PI_XPlatform.csprojResolveAssemblyReference.cache
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_XPlatform\PI_XPlatform\obj\Debug\PI_XPlatform.dll
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_XPlatform\PI_XPlatform\obj\Debug\PI_XPlatform.pdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_XPlatform\PI_XPlatform\obj\Debug\PI_XPlatform.dll.mdb
+C:\Users\layrj\documents\visual studio 2013\Projects\PhysicalInventory_Tester\PI_XPlatform\PI_XPlatform\bin\Debug\PI_XPlatform.dll.mdb

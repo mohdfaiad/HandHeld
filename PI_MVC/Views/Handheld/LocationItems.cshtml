@@ -1,0 +1,60 @@
+﻿@model PI_Models.HandHeldLocation
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+    <style>
+        .spacer {
+            margin: 0 5px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <div>
+
+
+            <div><h1>@Model.location.locationCode</h1></div>
+            <div>Records: @ViewBag.records</div>
+            <div><input type="submit" value="Submit" /></div>
+            @Html.HiddenFor(m => m.location.locationCode);
+
+            <table>
+                <tr>
+                    <th>SGTIN</th>
+                    <th>Found</th>
+                    <th>Status</th>
+                    <th>Status Time</th>
+                    <th>Location</th>
+                </tr>
+
+                @for (var i = 0; i < Model.location.items.Count; i++)
+                {
+                    <tr>
+                        <td class="bold">@Html.DisplayFor(m => m.location.items[i].sgtin)</td>
+                        <td>@Html.CheckBoxFor(m => m.location.items[i].found)</td>
+                        <td>@Html.DisplayFor(m => m.location.items[i].status)</td>
+                        <td>@Html.DisplayFor(m => m.location.items[i].statusTime)</td>
+                        <td>@Html.DropDownListFor(m => m.location.items[i].changeLocation, Model.locationsList)</td>
+
+                    </tr>
+                }
+            </table>
+
+
+
+
+
+        </div>
+
+    </form>
+</body>
+</html>
